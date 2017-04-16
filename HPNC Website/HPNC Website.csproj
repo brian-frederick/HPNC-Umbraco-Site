@@ -369,6 +369,14 @@
     <Content Include="Views\Partials\SiteLayout\_header.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Partials\SiteLayout\_footer.cshtml" />
+    <Content Include="Views\Programs1.cshtml" />
+    <Content Include="Views\Board.cshtml" />
+    <Content Include="Views\Calendar.cshtml" />
+    <Content Include="Views\Donate.cshtml" />
+    <Content Include="Views\OurStory.cshtml" />
+    <Content Include="Views\SpaceRental.cshtml" />
+    <Content Include="Views\Staff.cshtml" />
+    <Content Include="Views\Volunteer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -405,6 +413,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\SiteLayoutController.cs" />
+    <Compile Include="Models\NavigationLink.cs" />
+    <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
