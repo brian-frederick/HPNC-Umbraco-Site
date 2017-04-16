@@ -3,3 +3,19 @@
 	Layout = "WebBase.cshtml";
 }
 i am donate
+
+<body>
+    @*<div class="row">
+        @Umbraco.Field("donationAppeal")
+    </div>*@
+
+    <div class="row">
+        <div class="col-sm-6">
+            @{Html.RenderAction("RenderDonationForm", "DonationFormSurface"); }
+        </div>
+    </div>
+
+    @*<div class="row">
+        @Umbraco.Field("donationTaxInfo")
+    </div>*@
+</body>
