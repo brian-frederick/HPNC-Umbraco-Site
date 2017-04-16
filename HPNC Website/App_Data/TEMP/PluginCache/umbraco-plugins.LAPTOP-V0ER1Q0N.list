@@ -214,4 +214,155 @@
     <add type="Umbraco.Core.Persistence.Mappers.UserMapper, Umbraco.Core, Version=1.0.6309.16496, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Core.Persistence.Mappers.UserTypeMapper, Umbraco.Core, Version=1.0.6309.16496, Culture=neutral, PublicKeyToken=null" />
   </baseType>
+  <baseType type="umbraco.interfaces.IApplication" resolutionType="FindTypesWithAttribute">
+    <add type="umbraco.businesslogic.ContentApplicationDefinition, businesslogic, Version=1.0.6309.16499, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.MediaApplicationDefinition, businesslogic, Version=1.0.6309.16499, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.SettingsApplicationDefinition, businesslogic, Version=1.0.6309.16499, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.DeveloperApplicationDefinition, businesslogic, Version=1.0.6309.16499, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.UsersApplicationDefinition, businesslogic, Version=1.0.6309.16499, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.MembersApplicationDefinition, businesslogic, Version=1.0.6309.16499, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.businesslogic.TranslationApplicationDefinition, businesslogic, Version=1.0.6309.16499, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="Umbraco.Web.Trees.TreeController" resolutionType="FindTypesWithAttribute">
+    <add type="Umbraco.Web.Trees.ContentTypeTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.PackagesTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.MediaTypeTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.MemberTypeTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.DataTypeTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.LanguageTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.MemberTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.TemplatesTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.MediaTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.ContentTreeController, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="umbraco.interfaces.ITree" resolutionType="FindTypesWithAttribute">
+    <add type="umbraco.loadRelationTypes, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadDictionary, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadMacros, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadMemberGroups, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadPython, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadScripts, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadStylesheetProperty, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadStylesheets, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadUsers, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadXslt, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.Trees.UserPermissions, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="umbraco.interfaces.ITree" resolutionType="FindAllTypes">
+    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.6309.16505, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.6309.16505, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadPackager, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.PartialViewsTree, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Trees.PartialViewMacrosTree, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadDLRScripts, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadRelationTypes, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.Trees.MediaRecycleBin, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.Trees.ContentRecycleBin, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadContent, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadcontentItemType, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadDataTypes, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadDictionary, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadLanguages, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadMacros, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadMedia, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadMediaTypes, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadMemberGroups, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadMembers, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadMemberTypes, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadNodeTypes, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadPackages, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadPython, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadScripts, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadStylesheetProperty, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadStylesheets, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadTemplates, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadOpenTasks, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadYourTasks, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadUsers, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.loadXslt, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.Trees.NullTree, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.Trees.LegacyTree, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.Trees.UserPermissions, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="Umbraco.Web.HealthCheck.HealthCheck" resolutionType="FindAllTypes">
+    <add type="Umbraco.Web.HealthCheck.Checks.Config.MacroErrorsCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Config.NotificationEmailCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Config.TrySkipIisCustomErrorsCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Config.CustomErrorsCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Config.TraceCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Config.CompilationDebugCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Services.SmtpCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Permissions.FolderAndFilePermissionsCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Security.ExcessiveHeadersCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Security.ClickJackingCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.Security.HttpsCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.HealthCheck.Checks.DataIntegrity.XmlDataIntegrityHealthCheck, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="umbraco.interfaces.IAction" resolutionType="FindAllTypes">
+    <add type="umbraco.BusinessLogic.Actions.PlaceboAction, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionAssignDomain, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionAudit, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionBrowse, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionChangeDocType, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionCopy, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionDelete, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionDisable, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionEmptyTranscan, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionExport, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionImport, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionMove, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionNew, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionNewFolder, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionNotify, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionNull, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionPackage, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionPackageCreate, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionProtect, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionPublish, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionQuit, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionRefresh, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionRePublish, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionRights, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionRollback, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionSendToTranslate, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionSort, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionToPublish, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionTranslate, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionUpdate, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ContextMenuSeperator, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionUnPublish, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.Actions.ActionRestore, cms, Version=1.0.6309.16500, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.developer.RelationTypes.TreeMenu.ActionDeleteRelationType, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.cms.presentation.developer.RelationTypes.TreeMenu.ActionNewRelationType, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="Umbraco.Web.Editors.IEditorValidator" resolutionType="FindAllTypes">
+    <add type="Umbraco.ModelsBuilder.Validation.ContentTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.ModelsBuilder.Validation.MediaTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.ModelsBuilder.Validation.MemberTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
+  <baseType type="umbraco.interfaces.ICacheRefresher" resolutionType="FindAllTypes">
+    <add type="Umbraco.Web.Cache.RelationTypeCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.ApplicationCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.ApplicationTreeCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.ContentTypeCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.DataTypeCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.DictionaryCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.DomainCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.LanguageCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.MacroCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.MediaCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.MemberCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.MemberGroupCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.PageCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.PublicAccessCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.StylesheetCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.StylesheetPropertyCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.TemplateCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.UnpublishedPageCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.UserCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.UserPermissionsCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+    <add type="Umbraco.Web.Cache.UserTypeCacheRefresher, umbraco, Version=1.0.6309.16503, Culture=neutral, PublicKeyToken=null" />
+  </baseType>
 </plugins>

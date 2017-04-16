@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "dcfac600bd5100f9")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9be62e21eb26acc7")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -52,7 +52,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Programs</summary>
 	[PublishedContentModel("programs")]
-	public partial class Programs : Home
+	public partial class Programs : Home, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "programs";
@@ -74,11 +74,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
 	}
 
 	/// <summary>Our Story</summary>
 	[PublishedContentModel("ourStory")]
-	public partial class OurStory : Home
+	public partial class OurStory : Home, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "ourStory";
@@ -100,11 +109,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
 	}
 
 	/// <summary>Calendar</summary>
 	[PublishedContentModel("calendar")]
-	public partial class Calendar : Home
+	public partial class Calendar : Home, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "calendar";
@@ -126,11 +144,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
 	}
 
 	/// <summary>Space Rental</summary>
 	[PublishedContentModel("spaceRental")]
-	public partial class SpaceRental : Home
+	public partial class SpaceRental : Home, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "spaceRental";
@@ -152,11 +179,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
 	}
 
 	/// <summary>Volunteer</summary>
 	[PublishedContentModel("volunteer")]
-	public partial class Volunteer : Home
+	public partial class Volunteer : Home, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "volunteer";
@@ -178,11 +214,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
 	}
 
 	/// <summary>Donate</summary>
 	[PublishedContentModel("donate")]
-	public partial class Donate : Home
+	public partial class Donate : Home, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "donate";
@@ -206,18 +251,18 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// UmbracoNaviHide: Do not display this page in NavBar
+		/// UmbracoNaviHide: UmbracoNaviHide
 		///</summary>
 		[ImplementPropertyType("umbracoNaviHide")]
 		public bool UmbracoNaviHide
 		{
-			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
 		}
 	}
 
 	/// <summary>Board</summary>
 	[PublishedContentModel("board")]
-	public partial class Board : Home
+	public partial class Board : Home, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "board";
@@ -239,11 +284,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
 	}
 
 	/// <summary>Staff</summary>
 	[PublishedContentModel("staff")]
-	public partial class Staff : Home
+	public partial class Staff : Home, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "staff";
@@ -265,6 +319,61 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+	}
+
+	// Mixin content Type 1080 with alias "admin"
+	/// <summary>Admin</summary>
+	public partial interface IAdmin : IPublishedContent
+	{
+		/// <summary>UmbracoNaviHide</summary>
+		bool UmbracoNaviHide { get; }
+	}
+
+	/// <summary>Admin</summary>
+	[PublishedContentModel("admin")]
+	public partial class Admin : PublishedContentModel, IAdmin
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "admin";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Admin(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Admin, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return GetUmbracoNaviHide(this); }
+		}
+
+		/// <summary>Static getter for UmbracoNaviHide</summary>
+		public static bool GetUmbracoNaviHide(IAdmin that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
 	}
 
 	/// <summary>Folder</summary>
