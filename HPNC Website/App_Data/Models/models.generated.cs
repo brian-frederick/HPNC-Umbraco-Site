@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9be62e21eb26acc7")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ef839062abb1ca83")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -108,6 +108,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OurStory, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// contentField: Enter your content here
+		///</summary>
+		[ImplementPropertyType("contentField")]
+		public IHtmlString ContentField
+		{
+			get { return this.GetPropertyValue<IHtmlString>("contentField"); }
 		}
 
 		///<summary>
@@ -374,6 +383,41 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for UmbracoNaviHide</summary>
 		public static bool GetUmbracoNaviHide(IAdmin that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
+	}
+
+	/// <summary>Programs Base</summary>
+	[PublishedContentModel("programsBase")]
+	public partial class ProgramsBase : Programs
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "programsBase";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ProgramsBase(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ProgramsBase, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Page Content: Paste page content here
+		///</summary>
+		[ImplementPropertyType("pageContent")]
+		public IHtmlString PageContent
+		{
+			get { return this.GetPropertyValue<IHtmlString>("pageContent"); }
+		}
 	}
 
 	/// <summary>Folder</summary>

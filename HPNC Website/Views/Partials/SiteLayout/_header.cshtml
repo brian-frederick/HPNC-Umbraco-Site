@@ -5,9 +5,9 @@
     <div class="row">
         <div class="col-lg-12">
             <a href="~/" title="">
-                <img src="/media/1050/hpnc-logo-1.png" class="img-responsive topnav-logo" alt="">
+                <img src="~/media/BasePics/hpnc-logo-1.png" class="img-responsive topnav-logo" alt="">
             </a><a href="#" class="topnav-donate-btn-mobile">DONATE</a>
-            <img src="/media/1052/hpnc-logo-fam.png" class="img-responsive topnav-logo-fam" alt="Learn, Thrive, Grow">
+            <img src="~/media/BasePics/hpnc-logo-fam.png" class="img-responsive topnav-logo-fam" alt="Learn, Thrive, Grow">
         </div>
     </div>
 </div>
@@ -51,14 +51,21 @@ if (listItems != null)
                 }
                 else if (item.Link != null)
                 {
-                    <a href="@item.Link.Url" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null) @(item.HasChildren ? "fh5co-sub-ddown" : null)" target="@item.Link.Target">@item.Link.Text</a>
+                    <a href="@item.Link.Url"  id="@item.Text" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null) 
+                       @(item.HasChildren ? "" : null)" target="@item.Link.Target">@item.Link.Text</a>
                 }
 
                 @if (item.HasChildren)
                 {
-                    <ul class="sub-menu">
-                        @RenderChildItems(item.Items)
-                    </ul>
+                    <div class="dropdown-menu" aria-labelledby="@item.Text">
+
+                        @*@RenderChildItems(item.Items)*@
+                        
+                        @foreach (var child in item.Items)
+                        {
+                            <a href="@child.Link.Url" class="dropdown-item" >@child.Link.Text</a>
+                        }
+                    </div>
                 }
             </li>
     }
