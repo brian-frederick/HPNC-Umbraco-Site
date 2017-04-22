@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ef839062abb1ca83")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ba01f31f9d4199dc")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -166,7 +166,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Space Rental</summary>
 	[PublishedContentModel("spaceRental")]
-	public partial class SpaceRental : Home, IAdmin
+	public partial class SpaceRental : Home, IAdmin, IRichTextBase
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "spaceRental";
@@ -197,11 +197,20 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
 		}
+
+		///<summary>
+		/// Core Page Content: Add full page content here
+		///</summary>
+		[ImplementPropertyType("corePageContent")]
+		public IHtmlString CorePageContent
+		{
+			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
+		}
 	}
 
 	/// <summary>Volunteer</summary>
 	[PublishedContentModel("volunteer")]
-	public partial class Volunteer : Home, IAdmin
+	public partial class Volunteer : Home, IAdmin, IRichTextBase
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "volunteer";
@@ -231,6 +240,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool UmbracoNaviHide
 		{
 			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
+		/// Core Page Content: Add full page content here
+		///</summary>
+		[ImplementPropertyType("corePageContent")]
+		public IHtmlString CorePageContent
+		{
+			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
 		}
 	}
 
@@ -417,6 +435,114 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString PageContent
 		{
 			get { return this.GetPropertyValue<IHtmlString>("pageContent"); }
+		}
+	}
+
+	// Mixin content Type 1085 with alias "richTextBase"
+	/// <summary>Rich Text Base</summary>
+	public partial interface IRichTextBase : IPublishedContent
+	{
+		/// <summary>Core Page Content</summary>
+		IHtmlString CorePageContent { get; }
+	}
+
+	/// <summary>Rich Text Base</summary>
+	[PublishedContentModel("richTextBase")]
+	public partial class RichTextBase : PublishedContentModel, IRichTextBase
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "richTextBase";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public RichTextBase(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RichTextBase, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Core Page Content: Add full page content here
+		///</summary>
+		[ImplementPropertyType("corePageContent")]
+		public IHtmlString CorePageContent
+		{
+			get { return GetCorePageContent(this); }
+		}
+
+		/// <summary>Static getter for Core Page Content</summary>
+		public static IHtmlString GetCorePageContent(IRichTextBase that) { return that.GetPropertyValue<IHtmlString>("corePageContent"); }
+	}
+
+	/// <summary>Custom Home</summary>
+	[PublishedContentModel("customHome")]
+	public partial class CustomHome : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "customHome";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public CustomHome(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CustomHome, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Add caption for Pic2: Add caption for Pic2
+		///</summary>
+		[ImplementPropertyType("addCaptionForPic2")]
+		public string AddCaptionForPic2
+		{
+			get { return this.GetPropertyValue<string>("addCaptionForPic2"); }
+		}
+
+		///<summary>
+		/// HomePic1: Add Top Left Pic
+		///</summary>
+		[ImplementPropertyType("homePic1")]
+		public string HomePic1
+		{
+			get { return this.GetPropertyValue<string>("homePic1"); }
+		}
+
+		///<summary>
+		/// HomePic1 Text: Add caption for Pic1
+		///</summary>
+		[ImplementPropertyType("homePic1Text")]
+		public string HomePic1Text
+		{
+			get { return this.GetPropertyValue<string>("homePic1Text"); }
+		}
+
+		///<summary>
+		/// HomePic2: Add Top Right Photo
+		///</summary>
+		[ImplementPropertyType("homePic2")]
+		public string HomePic2
+		{
+			get { return this.GetPropertyValue<string>("homePic2"); }
 		}
 	}
 

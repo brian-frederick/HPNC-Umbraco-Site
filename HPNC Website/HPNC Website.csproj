@@ -326,6 +326,19 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />
+    <Content Include="Media\1001\bball.jpg" />
+    <Content Include="Media\1001\bball_big-thumb.jpg" />
+    <Content Include="Media\1001\bball_thumb.jpg" />
+    <Content Include="Media\1002\pcakebfast.jpg" />
+    <Content Include="Media\1002\pcakebfast_big-thumb.jpg" />
+    <Content Include="Media\1002\pcakebfast_thumb.jpg" />
+    <Content Include="Media\1003\roller.jpg" />
+    <Content Include="Media\1003\roller_big-thumb.jpg" />
+    <Content Include="Media\1003\roller_thumb.jpg" />
+    <Content Include="Media\1004\summer.jpg" />
+    <Content Include="Media\1004\summer_big-thumb.jpg" />
+    <Content Include="Media\1004\summer_thumb.jpg" />
+    <Content Include="Media\1009\codingtempleexample.js" />
     <Content Include="Media\BasePics\hpnc-logo-1.png" />
     <Content Include="Media\BasePics\hpnc-logo-fam.png" />
     <Content Include="Media\BasePics\hpnc-logo-fam_thumb.png" />
@@ -336,6 +349,13 @@
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Media\1005\google-chrome.lnk" />
+    <Content Include="Media\1006\notepadplusplus.lnk" />
+    <Content Include="Media\1007\opera.lnk" />
+    <Content Include="Media\1008\brian-frederick-draft-resume.docx" />
+    <Content Include="Media\1010\git-shell.lnk" />
+    <Content Include="Media\1011\github.appref-ms" />
+    <Content Include="Media\1012\spotify.lnk" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -354,7 +374,9 @@
     <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
     <Content Include="Media\Web.config" />
     <Content Include="config\UrlRewriting.config" />
-    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\umbracoSettings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="config\trees.config" />
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\scripting.config" />
@@ -390,6 +412,7 @@
     <Content Include="Views\Staff.cshtml" />
     <Content Include="Views\Volunteer.cshtml" />
     <Content Include="Views\Partials\_DonationForm.cshtml" />
+    <Content Include="Views\ProgramsBase.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -437,6 +460,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\DonationFormSurface\" />
   </ItemGroup>
   <PropertyGroup>

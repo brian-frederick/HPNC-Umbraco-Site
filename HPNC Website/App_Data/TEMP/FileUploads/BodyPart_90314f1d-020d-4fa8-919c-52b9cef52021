@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<HTML ng-app='codingTemple'>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="codingTempleExample.js"></script>
+		
+	</head>
+	<body>
+		<p>hello, world!</p>
+		<my-directive></my-directive>
+		<p>{{animal}}</p>
+	<body>
+</HTML>
