@@ -232,9 +232,8 @@ blue2: #00687f
 	background-color:#008fb0;
 }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-	background-color:transparent;
-	color:#fff;
+.dropdown:hover .dropdown-menu {
+	display: block;
 }
 .navbar-toggle .icon-bar {
     border-radius: 1px;

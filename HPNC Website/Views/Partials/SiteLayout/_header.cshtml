@@ -22,12 +22,12 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar">
             <ul class="nav navbar-nav">
                 @RenderChildItems(Model)
             </ul>
 
-            <ul class="nav navbar-nav topnav-donate">
+            <ul style="float:right" class="nav navbar-nav topnav-donate">
                 <li><a href="~/donate" class="topnav-donate-btn">DONATE</a></li>
             </ul>
 
@@ -44,7 +44,7 @@ if (listItems != null)
 {
     foreach (var item in listItems)
     {
-            <li>
+            <li class="dropdown">
                 @if (!String.IsNullOrEmpty(item.Text))
                 {
                     @item.Text
@@ -52,20 +52,22 @@ if (listItems != null)
                 else if (item.Link != null)
                 {
                     <a href="@item.Link.Url"  id="@item.Text" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null) 
-                       @(item.HasChildren ? "" : null)" target="@item.Link.Target">@item.Link.Text</a>
+                       @(item.HasChildren ? "dropdown-toggle" : null)" >@item.Link.Text</a>
                 }
 
                 @if (item.HasChildren)
                 {
-                    <div class="dropdown-menu" aria-labelledby="@item.Text">
+                    <ul class="dropdown-menu">
 
-                        @*@RenderChildItems(item.Items)*@
-                        
                         @foreach (var child in item.Items)
                         {
-                            <a href="@child.Link.Url" class="dropdown-item" >@child.Link.Text</a>
+                            <li class="dropdown-item">
+                                <a href="@child.Link.Url">@child.Link.Text</a>
+                            </li>
                         }
-                    </div>
+
+                    </ul>
+
                 }
             </li>
     }

@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Archetype">
+      <HintPath>HPNCUmbraco\bin\Archetype.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -323,6 +326,38 @@
     <Content Include="css\rte.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\assets\logo_50.png" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\assets\twitter.png" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\css\archetype.css" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\js\archetype.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\da-dk.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\da.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\de-de.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\de.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\en-gb.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\en-us.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\en.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\es-es.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\es.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\fr-fr.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\he-il.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\it-it.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\ja-jp.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\ko-kr.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\nb-no.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\nl-nl.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\pl-pl.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\pt-br.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\ru-ru.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\sv-se.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\langs\zh-cn.js" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.config.developer.dialog.html" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.config.fieldset.dialog.html" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.config.html" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.config.stylescript.dialog.html" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.default.html" />
+    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.html" />
+    <Content Include="HPNCUmbraco\bin\Archetype.dll" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />

@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ba01f31f9d4199dc")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4a8d94b9b3c596d6")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -50,7 +50,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>Programs</summary>
+	/// <summary>Programs2</summary>
 	[PublishedContentModel("programs")]
 	public partial class Programs : Home, IAdmin
 	{
@@ -71,278 +71,6 @@ namespace Umbraco.Web.PublishedContentModels
 #pragma warning restore 0109
 
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Programs, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// UmbracoNaviHide: UmbracoNaviHide
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
-		}
-	}
-
-	/// <summary>Our Story</summary>
-	[PublishedContentModel("ourStory")]
-	public partial class OurStory : Home, IAdmin
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "ourStory";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public OurStory(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OurStory, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// contentField: Enter your content here
-		///</summary>
-		[ImplementPropertyType("contentField")]
-		public IHtmlString ContentField
-		{
-			get { return this.GetPropertyValue<IHtmlString>("contentField"); }
-		}
-
-		///<summary>
-		/// UmbracoNaviHide: UmbracoNaviHide
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
-		}
-	}
-
-	/// <summary>Calendar</summary>
-	[PublishedContentModel("calendar")]
-	public partial class Calendar : Home, IAdmin
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "calendar";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Calendar(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Calendar, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// UmbracoNaviHide: UmbracoNaviHide
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
-		}
-	}
-
-	/// <summary>Space Rental</summary>
-	[PublishedContentModel("spaceRental")]
-	public partial class SpaceRental : Home, IAdmin, IRichTextBase
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "spaceRental";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public SpaceRental(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SpaceRental, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// UmbracoNaviHide: UmbracoNaviHide
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
-		}
-
-		///<summary>
-		/// Core Page Content: Add full page content here
-		///</summary>
-		[ImplementPropertyType("corePageContent")]
-		public IHtmlString CorePageContent
-		{
-			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
-		}
-	}
-
-	/// <summary>Volunteer</summary>
-	[PublishedContentModel("volunteer")]
-	public partial class Volunteer : Home, IAdmin, IRichTextBase
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "volunteer";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Volunteer(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Volunteer, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// UmbracoNaviHide: UmbracoNaviHide
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
-		}
-
-		///<summary>
-		/// Core Page Content: Add full page content here
-		///</summary>
-		[ImplementPropertyType("corePageContent")]
-		public IHtmlString CorePageContent
-		{
-			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
-		}
-	}
-
-	/// <summary>Donate</summary>
-	[PublishedContentModel("donate")]
-	public partial class Donate : Home, IAdmin
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "donate";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Donate(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Donate, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// UmbracoNaviHide: UmbracoNaviHide
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
-		}
-	}
-
-	/// <summary>Board</summary>
-	[PublishedContentModel("board")]
-	public partial class Board : Home, IAdmin
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "board";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Board(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Board, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// UmbracoNaviHide: UmbracoNaviHide
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
-		}
-	}
-
-	/// <summary>Staff</summary>
-	[PublishedContentModel("staff")]
-	public partial class Staff : Home, IAdmin
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "staff";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Staff(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Staff, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
@@ -403,7 +131,7 @@ namespace Umbraco.Web.PublishedContentModels
 		public static bool GetUmbracoNaviHide(IAdmin that) { return that.GetPropertyValue<bool>("umbracoNaviHide"); }
 	}
 
-	/// <summary>Programs Base</summary>
+	/// <summary>Programs Base2</summary>
 	[PublishedContentModel("programsBase")]
 	public partial class ProgramsBase : Programs
 	{
@@ -543,6 +271,330 @@ namespace Umbraco.Web.PublishedContentModels
 		public string HomePic2
 		{
 			get { return this.GetPropertyValue<string>("homePic2"); }
+		}
+	}
+
+	/// <summary>Volunteer</summary>
+	[PublishedContentModel("volunteer1")]
+	public partial class Volunteer1 : PublishedContentModel, IAdmin, IRichTextBase
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "volunteer1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Volunteer1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Volunteer1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
+		/// Core Page Content: Add full page content here
+		///</summary>
+		[ImplementPropertyType("corePageContent")]
+		public IHtmlString CorePageContent
+		{
+			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
+		}
+	}
+
+	/// <summary>Our Story</summary>
+	[PublishedContentModel("ourStory1")]
+	public partial class OurStory1 : PublishedContentModel, IAdmin
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "ourStory1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public OurStory1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OurStory1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// contentField: Enter your content here
+		///</summary>
+		[ImplementPropertyType("contentField")]
+		public IHtmlString ContentField
+		{
+			get { return this.GetPropertyValue<IHtmlString>("contentField"); }
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+	}
+
+	/// <summary>Calendar</summary>
+	[PublishedContentModel("calendar")]
+	public partial class Calendar : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "calendar";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Calendar(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Calendar, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Board of Directors</summary>
+	[PublishedContentModel("boardOfDirectors")]
+	public partial class BoardOfDirectors : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "boardOfDirectors";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public BoardOfDirectors(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BoardOfDirectors, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Donate</summary>
+	[PublishedContentModel("donate1")]
+	public partial class Donate1 : PublishedContentModel, IAdmin
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "donate1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Donate1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Donate1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+	}
+
+	/// <summary>Space Rental</summary>
+	[PublishedContentModel("spaceRental1")]
+	public partial class SpaceRental1 : PublishedContentModel, IAdmin, IRichTextBase
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "spaceRental1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public SpaceRental1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SpaceRental1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
+		/// Core Page Content: Add full page content here
+		///</summary>
+		[ImplementPropertyType("corePageContent")]
+		public IHtmlString CorePageContent
+		{
+			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
+		}
+	}
+
+	/// <summary>Staff</summary>
+	[PublishedContentModel("staff1")]
+	public partial class Staff1 : PublishedContentModel, IAdmin
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "staff1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Staff1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Staff1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+	}
+
+	/// <summary>Programs</summary>
+	[PublishedContentModel("programs1")]
+	public partial class Programs1 : PublishedContentModel, IAdmin
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "programs1";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Programs1(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Programs1, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+	}
+
+	/// <summary>Programs Base</summary>
+	[PublishedContentModel("programsBaseCopy")]
+	public partial class ProgramsBaseCopy : Programs1, IRichTextBase
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "programsBaseCopy";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ProgramsBaseCopy(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ProgramsBaseCopy, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Core Page Content: Add full page content here
+		///</summary>
+		[ImplementPropertyType("corePageContent")]
+		public IHtmlString CorePageContent
+		{
+			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
 		}
 	}
 
