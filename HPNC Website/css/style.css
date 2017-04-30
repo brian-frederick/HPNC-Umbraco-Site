@@ -462,11 +462,30 @@ blue2: #00687f
 	border-bottom:2px #fff solid;
 }
 
-a.home-title {color:#fff;}
-a.home-title:hover {color:#fff;}
+
+a.home-title {
+    color:#fdbb30;
+    padding-bottom: 25%;
+    position: absolute;
+    z-index: 100;
+}
+a.home-title:hover {
+    color:#f26531;
+    padding-bottom: 35%;
+    text-decoration: none;
+}
 .campHeaders {text-align:center;}
 .campButton {text-align:right;}
 .campBottom {text-align:center;}
+
+.home-featured-content {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 100%;
+}
+
 .grid {
 	position: relative;
 	margin: 0 auto;

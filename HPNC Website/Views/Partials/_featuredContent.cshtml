@@ -1,0 +1,17 @@
+﻿@using HPNC_Website.Controllers
+@using HPNC_Website.Models
+@model List<FeaturedContent>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-6">
+        <figure>
+            <img src="@item.ImageUrl" alt="img01" class="home-featured-content" />
+            <figcaption class="home-title">
+                <h2><a href="@item.LinkUrl" title="" class="home-title">@item.Name</a></h2>
+            </figcaption>
+        </figure>
+    </div>
+
+}

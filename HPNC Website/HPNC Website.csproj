@@ -448,6 +448,7 @@
     <Content Include="Views\Volunteer.cshtml" />
     <Content Include="Views\Partials\_DonationForm.cshtml" />
     <Content Include="Views\ProgramsBase.cshtml" />
+    <Content Include="Views\Partials\_featuredContent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -484,8 +485,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DonationFormSurfaceController.cs" />
+    <Compile Include="Controllers\HomeSurfaceController.cs" />
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Models\DonationFormModel.cs" />
+    <Compile Include="Models\FeaturedContent.cs" />
     <Compile Include="Models\NavigationLink.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
