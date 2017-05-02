@@ -373,6 +373,20 @@
     <Content Include="Media\1004\summer.jpg" />
     <Content Include="Media\1004\summer_big-thumb.jpg" />
     <Content Include="Media\1004\summer_thumb.jpg" />
+    <Content Include="Media\1005\ashleymclean.jpg" />
+    <Content Include="Media\1005\ashleymclean_thumb.jpg" />
+    <Content Include="Media\1006\blairroot.jpg" />
+    <Content Include="Media\1006\blairroot_thumb.jpg" />
+    <Content Include="Media\1007\cristinaalexander.jpg" />
+    <Content Include="Media\1007\cristinaalexander_thumb.jpg" />
+    <Content Include="Media\1008\emanuelmercado.jpg" />
+    <Content Include="Media\1008\emanuelmercado_thumb.jpg" />
+    <Content Include="Media\1009\jeremiah-oconnor.jpg" />
+    <Content Include="Media\1009\jeremiah-oconnor_thumb.jpg" />
+    <Content Include="Media\1010\sarahdiwan.jpg" />
+    <Content Include="Media\1010\sarahdiwan_thumb.jpg" />
+    <Content Include="Media\1011\thereseferguson.jpg" />
+    <Content Include="Media\1011\thereseferguson_thumb.jpg" />
     <Content Include="Media\BasePics\hpnc-logo-1.png" />
     <Content Include="Media\BasePics\hpnc-logo-fam.png" />
     <Content Include="Media\BasePics\hpnc-logo-fam_thumb.png" />
@@ -440,7 +454,6 @@
     <Content Include="Views\Volunteer.cshtml" />
     <Content Include="Views\Partials\_DonationForm.cshtml" />
     <Content Include="Views\ProgramsBase.cshtml" />
-    <Content Include="Views\Partials\_featuredContent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -477,7 +490,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DonationFormSurfaceController.cs" />
-    <Compile Include="Controllers\HomeSurfaceController.cs" />
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Models\DonationFormModel.cs" />
     <Compile Include="Models\FeaturedContent.cs" />

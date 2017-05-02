@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "65f7de231c0543f0")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "35cde89a36dbc681")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -471,6 +471,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Staff1, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Staff Members
+		///</summary>
+		[ImplementPropertyType("staffMembers")]
+		public Archetype.Models.ArchetypeModel StaffMembers
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("staffMembers"); }
 		}
 
 		///<summary>

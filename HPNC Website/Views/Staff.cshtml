@@ -1,4 +1,30 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
 @{
 	Layout = "WebBase.cshtml";
 }
+
+<div class="container">
+    <div class="row">
+        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("staffMembers"))
+        {
+            var imageId = @fieldset.GetValue("image");
+            var image = Umbraco.Media(imageId);
+
+            <div class="col-lg-6">
+                <div class="row">
+                    <div style="vertical-align:middle" class="col-sm-3">
+                        <img src="@image.umbracoFile" class="bio-image circular-image" />
+                    </div>
+                    <div class="col-sm-9" >
+                        <h2 ><a href="mailto:@fieldset.GetValue("emailAddress")" title="" class="">@fieldset.GetValue("name")</a></h2>
+                        <i>@fieldset.GetValue("position")</i>
+                        <p class="bio-description">@fieldset.GetValue("description")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

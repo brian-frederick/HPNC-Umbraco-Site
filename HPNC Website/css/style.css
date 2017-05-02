@@ -703,3 +703,15 @@ figure.effect-honey:hover h2{
     -moz-border-radius:6px 0 6px 6px;
     border-radius:6px 0 6px 6px;
 }
+
+.bio-image{
+    margin-top: 30px;
+    max-height:130px;
+    max-width:130px;
+}
+.bio-description{
+    font-size: 11px;
+}
+.circular-image {
+    border-radius: 100%;
+}
