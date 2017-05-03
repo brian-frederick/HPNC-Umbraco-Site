@@ -14,10 +14,31 @@ namespace HPNC_Website.Controllers
 {
     public class DonationFormSurfaceController : SurfaceController
     {
-        // GET: DonationFormSurface
+       
         public ActionResult RenderDonationForm()
         {
+            //TempData["DonationInProcess"] = false;
+            //TempData["DonationSuccessful"] = false;
+
             return PartialView("~/Views/Partials/_DonationForm.cshtml", new DonationFormModel());
+        }
+
+        public ActionResult RenderCreditCardForm(DonationFormModel model)
+        {
+            TempData["DonationInProcess"] = true;
+            TempData["DonationSuccessful"] = false;
+            TempData.Add("model", model);
+
+            return RedirectToCurrentUmbracoPage();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BeginDonation(DonationFormModel model)
+        {
+
+
+
+            return PartialView("~/Views/Partials/_personalInfoForm.cshtml", model); 
         }
 
         [HttpPost]
@@ -27,6 +48,7 @@ namespace HPNC_Website.Controllers
             //Check if the dat posted is valid (All required's & email set in email field)
             if (!ModelState.IsValid)
             {
+
                 //Not valid - so lets return the user back to the view with the data they entered still prepopulated
                 return CurrentUmbracoPage();
             }
@@ -35,7 +57,7 @@ namespace HPNC_Website.Controllers
             string authorization = "sq0atp-y3yfJ9z11FzNCI-0yXsT3A";
             string locationId = "4TF4RMNFM5D9T";
             string key = Guid.NewGuid().ToString();
-            string fullName = model.FirstName + " " + model.LastName;
+            string fullName = model.Name;
             model.Amount = model.Amount * 100;
             Money money = new Money(model.Amount, Money.CurrencyEnum.USD);
 
