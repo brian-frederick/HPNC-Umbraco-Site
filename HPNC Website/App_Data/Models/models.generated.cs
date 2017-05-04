@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "35cde89a36dbc681")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2ac7eb2a5ba8332f")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -376,6 +376,51 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Donate1, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Appeal Language: Add top-of-page appeal language
+		///</summary>
+		[ImplementPropertyType("appealLanguage")]
+		public string AppealLanguage
+		{
+			get { return this.GetPropertyValue<string>("appealLanguage"); }
+		}
+
+		///<summary>
+		/// Confirmation Message: Add thank you message and information about donation
+		///</summary>
+		[ImplementPropertyType("confirmationMessage")]
+		public string ConfirmationMessage
+		{
+			get { return this.GetPropertyValue<string>("confirmationMessage"); }
+		}
+
+		///<summary>
+		/// Confirmation Photo
+		///</summary>
+		[ImplementPropertyType("confirmationPhoto")]
+		public string ConfirmationPhoto
+		{
+			get { return this.GetPropertyValue<string>("confirmationPhoto"); }
+		}
+
+		///<summary>
+		/// Donate Image: Select Donation Page Image
+		///</summary>
+		[ImplementPropertyType("donateImage")]
+		public string DonateImage
+		{
+			get { return this.GetPropertyValue<string>("donateImage"); }
+		}
+
+		///<summary>
+		/// Legal Donation Language
+		///</summary>
+		[ImplementPropertyType("legalDonationLanguage")]
+		public string LegalDonationLanguage
+		{
+			get { return this.GetPropertyValue<string>("legalDonationLanguage"); }
 		}
 
 		///<summary>

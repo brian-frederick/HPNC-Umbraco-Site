@@ -17,9 +17,6 @@ namespace HPNC_Website.Controllers
        
         public ActionResult RenderDonationForm()
         {
-            //TempData["DonationInProcess"] = false;
-            //TempData["DonationSuccessful"] = false;
-
             return PartialView("~/Views/Partials/_DonationForm.cshtml", new DonationFormModel());
         }
 
@@ -54,8 +51,10 @@ namespace HPNC_Website.Controllers
             }
 
             //build API model
-            string authorization = "sq0atp-y3yfJ9z11FzNCI-0yXsT3A";
-            string locationId = "4TF4RMNFM5D9T";
+            //string authorization = "sq0atp-y3yfJ9z11FzNCI-0yXsT3A";
+            string authorization = "sandbox-sq0atb-uIKrJ7mof7lHpc8tBOU1HA"; //sandbox
+            //string locationId = "4TF4RMNFM5D9T";
+            string locationId = "CBASEAF9JuhJ7vWfEWKTYiRX57QgAQ"; //sandbox
             string key = Guid.NewGuid().ToString();
             string fullName = model.Name;
             model.Amount = model.Amount * 100;
@@ -70,12 +69,12 @@ namespace HPNC_Website.Controllers
             }
             catch (Exception ex)
             {
-                //Throw an exception if there is a problem sending the email
+                //Add Error Handling
                 throw ex;
             }
 
             //Update success flag (in a TempData key)
-            TempData["IsSuccessful"] = true;
+            TempData["DonationSuccessful"] = true;
 
             //All done - lets redirect to the current page & show our thanks/success message
             return RedirectToCurrentUmbracoPage();

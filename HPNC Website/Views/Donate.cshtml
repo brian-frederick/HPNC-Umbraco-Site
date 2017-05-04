@@ -5,18 +5,25 @@
 i am donate
 
 <body>
-    @*<div class="row">
-        @Umbraco.Field("donationAppeal")
-    </div>*@
-
+ 
+   @if (Convert.ToBoolean(TempData["DonationSuccessful"]))
+   {
+    <div class="row">
+        @Umbraco.Field("confirmationMessage")
+    </div>
+   }
+   else
+   {
     <div class="row">
         <div style="margin:0 25%" class="col-sm-6">
-                @{Html.RenderAction("RenderDonationForm", "DonationFormSurface");}
-            </div>
+            @{Html.RenderAction("RenderDonationForm", "DonationFormSurface");}
+        </div>
     </div>
+    }
+    
 
 
-    @*<div class="row">
+    <div class="row">
         @Umbraco.Field("donationTaxInfo")
-    </div>*@
+    </div>
 </body>

@@ -1,4 +1,5 @@
-﻿@using HPNC_Website.Controllers
+﻿
+@using HPNC_Website.Controllers
 @using HPNC_Website.Models
 @model DonationFormModel
 
@@ -10,160 +11,175 @@
 @*Thank You Message*@
 @if (Convert.ToBoolean(TempData["DonationSuccessful"]))
 {
-
+    <p>Thank you for your contribution! You will receive an email confirmation soon!</p>
 }
 //Donation Form
-else 
+else
 {
-<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
-<script>
-    var applicationId = 'sq0idp-VhvtshvxGtw1TpOlMiIrRA';
+    <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+    <script>
+        //var applicationId = 'sq0idp-VhvtshvxGtw1TpOlMiIrRA';
+        var applicationId = "sandbox-sq0idp-VhvtshvxGtw1TpOlMiIrRA"//sandbox
 
-            // Initializes the payment form. See the documentation for descriptions of
-            // each of these parameters.
-            var paymentForm = new SqPaymentForm({
-        applicationId: applicationId,
-        inputClass: 'sq-input',
-        inputStyles: [
-                        {
-            fontSize: '15px'
-            }
-        ],
-        cardNumber: {
-            elementId: 'sq-card-number',
-            placeholder: '•••• •••• •••• ••••'
-        },
-        cvv: {
-            elementId: 'sq-cvv',
-            placeholder: 'CVV'
-        },
-        expirationDate: {
-            elementId: 'sq-expiration-date',
-            placeholder: 'MM/YY'
-        },
-        postalCode: {
-            elementId: 'sq-postal-code'
-        },
-        callbacks: {
+        // Initializes the payment form. See the documentation for descriptions of
+        // each of these parameters.
+        var paymentForm = new SqPaymentForm({
+            applicationId: applicationId,
+            inputClass: 'sq-input',
+            inputStyles: [
+                            {
+                                fontSize: '15px'
+                            }
+            ],
+            cardNumber: {
+                elementId: 'sq-card-number',
+                placeholder: '•••• •••• •••• ••••'
+            },
+            cvv: {
+                elementId: 'sq-cvv',
+                placeholder: 'CVV'
+            },
+            expirationDate: {
+                elementId: 'sq-expiration-date',
+                placeholder: 'MM/YY'
+            },
+            postalCode: {
+                elementId: 'sq-postal-code'
+            },
+            callbacks: {
 
-            cardNonceResponseReceived: function(errors, nonce, cardData) {
+                cardNonceResponseReceived: function (errors, nonce, cardData) {
                     if (errors) {
                         console.log("Encountered errors:");
-                        errors.forEach(function(error) {
+                        errors.forEach(function (error) {
                             console.log('  ' + error.message);
                         });
                     } else {
-//                        alert('New Nonce received: ' + nonce);
+                        //                        alert('New Nonce received: ' + nonce);
                         document.getElementById('card-nonce').value = nonce;
                         document.getElementById('nonce-form').submit();
                     }
                 },
-            unsupportedBrowserDetected: function() {
+                unsupportedBrowserDetected: function () {
                     // Fill in this callback to alert buyers when their browser is not supported.
                 },
                 // Fill in these cases to respond to various events that can occur while a
                 // buyer is using the payment form.
-                inputEventReceived: function(inputEvent) {
-                        switch (inputEvent.eventType) {
-                            case 'focusClassAdded':
-                                // Handle as desired
-                                break;
-                            case 'focusClassRemoved':
-                                // Handle as desired
-                                break;
-                            case 'errorClassAdded':
-                                // Handle as desired
-                                break;
-                            case 'errorClassRemoved':
-                                // Handle as desired
-                                break;
-                            case 'cardBrandChanged':
-                                // Handle as desired
-                                break;
-                            case 'postalCodeChanged':
-                                // Handle as desired
-                                break;
-                        }
-                    },
-
-                paymentFormLoaded: function() {
-                        // Fill in this callback to perform actions after the payment form is
-                        // done loading (such as setting the postal code field programmatically).
-                        // paymentForm.setPostalCode('94103');
+                inputEventReceived: function (inputEvent) {
+                    switch (inputEvent.eventType) {
+                        case 'focusClassAdded':
+                            // Handle as desired
+                            break;
+                        case 'focusClassRemoved':
+                            // Handle as desired
+                            break;
+                        case 'errorClassAdded':
+                            // Handle as desired
+                            break;
+                        case 'errorClassRemoved':
+                            // Handle as desired
+                            break;
+                        case 'cardBrandChanged':
+                            // Handle as desired
+                            break;
+                        case 'postalCodeChanged':
+                            // Handle as desired
+                            break;
                     }
-                }
-            });
+                },
 
-            function requestCardNonce(event) {
-                debugger
+                paymentFormLoaded: function () {
+                    // Fill in this callback to perform actions after the payment form is
+                    // done loading (such as setting the postal code field programmatically).
+                    // paymentForm.setPostalCode('94103');
+                }
+            }
+        });
+
+        function requestCardNonce(event) {
+            debugger
             event.preventDefault();
             paymentForm.requestCardNonce();
         }
-</script>
 
+    </script>
+
+    <div class="row">
+        <label style="margin-left:33%; text-align: center" class="col-lg-4">Thank you for your support.</label>
+    </div>
+   
     using (Html.BeginUmbracoForm("HandleDonationForm", "DonationFormSurface", null, new { @id = "nonce-form" }))
     {
 
-    @Html.ValidationSummary(true)
-    @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
 
-    <label>Donation Amount</label>
-    @Html.TextBoxFor(model => model.Amount, new { placeholder = "Donation Amount", @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.Amount)
+                <label>$ Amount</label>
+                @Html.TextBoxFor(model => model.Amount, new { @class = "form-control", style = "width: 10em" })
+                @Html.ValidationMessageFor(model => model.Amount)
 
-    <label>Name</label>
-    @Html.TextBoxFor(model => model.Name, new { placeholder = "Full Name", @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.Name)
+                <label>Name</label>
+                @Html.TextBoxFor(model => model.Name, new { placeholder = "Full Name", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+                
+                <label>Email</label>
+                @Html.TextBoxFor(model => model.Email, new { placeholder = "Email@email.com", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email)
 
-    <label>Email</label>
-    @Html.TextBoxFor(model => model.Email, new { placeholder = "Email@email.com", @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.Email)
+                <br />
+                <div class="row">
+                    <label style="margin-left:33%; text-align: center" class="col-lg-4">Mailing Address</label>
+                </div>
 
-    <br />
-    <div class="row">
-        <label style="margin-left:33%; text-align: center" class="col-lg-3">Billing Address</label>
-    </div>
+                <label>Street Address 1</label>
+                @Html.TextBoxFor(model => model.StreetAddress1, new { placeholder = "Street Address", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.StreetAddress1)
 
-    <label>Street Address 1</label>
-    @Html.TextBoxFor(model => model.StreetAddress1, new { placeholder = "Street Address", @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.StreetAddress1)
+                <label>Street Address 2</label>
+                @Html.TextBoxFor(model => model.StreetAddress2, new { placeholder = "Unit Number", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.StreetAddress2)
 
-    <label>Street Address 2</label>
-    @Html.TextBoxFor(model => model.StreetAddress2, new { placeholder = "Unit Number", @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.StreetAddress2)
+                <label>City</label>
+                @Html.TextBoxFor(model => model.City, new { placeholder = "City", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.City)
 
-    <label>City</label>
-    @Html.TextBoxFor(model => model.City, new { placeholder = "City", @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.City)
+                <label>State</label>
+                @Html.TextBoxFor(model => model.State, new { placeholder = "State", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.State)
 
-    <label>State</label>
-    @Html.TextBoxFor(model => model.State, new { placeholder = "State", @class = "form-control" })
-    @Html.ValidationMessageFor(model => model.State)
 
-    <label>Zip Code</label>
-    @Html.TextBoxFor(model => model.ZipCode, new { placeholder = "Zip Code", id = "sq-postal-code", @class="form-control" })
-    @Html.ValidationMessageFor(model => model.ZipCode)
+                <label>Postal Code</label>
+                @Html.TextBoxFor(model => model.ZipCode, new { placeholder = "Zip Code", id = "model-postal-code", @class = "form-control" })
 
-    @Html.TextBoxFor(model => model.Nonce, new { placeholder = "Nonce - will eventually hide", id = "card-nonce", type = "hidden" })
-    @Html.ValidationMessageFor(model => model.Nonce)
+                @Html.TextBoxFor(model => model.Nonce, new { placeholder = "Nonce - will eventually hide", id = "card-nonce", type = "hidden" })
+                @Html.ValidationMessageFor(model => model.Nonce)
 
-    <br />
-    <div class="row">
-        <label style="margin-left:33%; text-align: center" class="col-lg-3">Credit Card Info</label>
-    </div>
-        //should not be sent back to server. only the nonce
-    <label>Card Number</label>
-    <div class="form-control" id="sq-card-number"></div>
-    <label>CVV</label>
-    <div class="form-control" id="sq-cvv"></div>
-    <label>Expiration Date</label>
-    <div class="form-control" id="sq-expiration-date"></div>
-    @*<label>Postal Code</label>
-    <div class="form-control" id="sq-postal-code"></div>*@
+                <br />
+                <div class="row">
+                    <label style="margin-left:33%; text-align: center" class="col-lg-4">Credit Card Info</label>
+                </div>
+                //should not be sent back to server. only the nonce
 
-    <br />
-    <input type="submit" onclick="requestCardNonce(event)">
+                    <div>
+                        <label>Card Number</label>
+                        <div class="form-control" id="sq-card-number"></div>
+                    </div>
+                    <div style="width: 10em">
+                        <label>CVV</label>
+                        <div class="form-control" id="sq-cvv"></div>
+                    </div>
+                    <div style="width: 10em">
+                        <label>Expiration</label>
+                        <div class="form-control" id="sq-expiration-date"></div>
+                    </div>
+                    <div style="width: 10em">
+                        <label>Billing Postal Code</label>
+                        <div class="form-control" id="sq-postal-code"></div>
+                    </div>
+
+                    <br />
+            <input type="submit" onclick="requestCardNonce(event)">
 
     }
-  
+
 }
