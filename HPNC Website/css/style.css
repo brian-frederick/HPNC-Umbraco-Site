@@ -737,3 +737,17 @@ figure.effect-honey:hover h2{
     float:left;
     margin-right: 1em;
 }
+.donation-error {
+    color: red;
+    border-color: red;
+}
+.donation-header {
+    margin-left: 8.6%;
+    text-align: center;
+    color: #f26531;
+}
+.donation-legal{
+    margin-top: 20px;
+    font-size: 12px;
+    font-style: italic;
+}

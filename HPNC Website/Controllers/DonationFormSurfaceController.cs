@@ -69,8 +69,11 @@ namespace HPNC_Website.Controllers
             }
             catch (Exception ex)
             {
-                //Add Error Handling
-                throw ex;
+
+                TempData["DonationError"] = true;
+
+                //All done - lets redirect to the current page & show our thanks/success message
+                return RedirectToCurrentUmbracoPage();
             }
 
             //Update success flag (in a TempData key)

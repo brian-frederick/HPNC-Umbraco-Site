@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2ac7eb2a5ba8332f")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1316edb479ca0e74")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -428,6 +428,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string DonateImage
 		{
 			get { return this.GetPropertyValue<string>("donateImage"); }
+		}
+
+		///<summary>
+		/// Donation Error Message: Add text that will appear upon payment error.
+		///</summary>
+		[ImplementPropertyType("donationErrorMessage")]
+		public string DonationErrorMessage
+		{
+			get { return this.GetPropertyValue<string>("donationErrorMessage"); }
 		}
 
 		///<summary>

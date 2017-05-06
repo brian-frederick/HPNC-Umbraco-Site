@@ -8,14 +8,7 @@
     Html.EnableUnobtrusiveJavaScript(true);
 }
 
-@*Thank You Message*@
-@if (Convert.ToBoolean(TempData["DonationSuccessful"]))
-{
-    <p>Thank you for your contribution! You will receive an email confirmation soon!</p>
-}
-//Donation Form
-else
-{
+
     <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
     <script>
         //var applicationId = 'sq0idp-VhvtshvxGtw1TpOlMiIrRA';
@@ -104,11 +97,8 @@ else
 
     </script>
 
-    <div class="row">
-        <label style="margin-left:33%; text-align: center" class="col-lg-4">Thank you for your support.</label>
-    </div>
    
-    using (Html.BeginUmbracoForm("HandleDonationForm", "DonationFormSurface", null, new { @id = "nonce-form" }))
+    @using (Html.BeginUmbracoForm("HandleDonationForm", "DonationFormSurface", null, new { @id = "nonce-form" }))
     {
 
         @Html.ValidationSummary(true)
@@ -128,7 +118,7 @@ else
 
                 <br />
                 <div class="row">
-                    <label style="margin-left:33%; text-align: center" class="col-lg-4">Mailing Address</label>
+                    <label class="donation-header col-lg-10">Mailing Address</label>
                 </div>
 
                 <label>Street Address 1</label>
@@ -156,9 +146,8 @@ else
 
                 <br />
                 <div class="row">
-                    <label style="margin-left:33%; text-align: center" class="col-lg-4">Credit Card Info</label>
+                    <label class="donation-header col-lg-10">Credit Card Info</label>
                 </div>
-                //should not be sent back to server. only the nonce
 
                     <div>
                         <label>Card Number</label>
@@ -179,7 +168,8 @@ else
 
                     <br />
             <input type="submit" onclick="requestCardNonce(event)">
+        <br />
 
     }
 
-}
+

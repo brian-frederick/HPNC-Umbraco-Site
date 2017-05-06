@@ -2,28 +2,48 @@
 @{
     Layout = "WebBase.cshtml";
 }
-i am donate
+
 
 <body>
- 
-   @if (Convert.ToBoolean(TempData["DonationSuccessful"]))
-   {
-    <div class="row">
-        @Umbraco.Field("confirmationMessage")
-    </div>
-   }
-   else
-   {
-    <div class="row">
-        <div style="margin:0 25%" class="col-sm-6">
-            @{Html.RenderAction("RenderDonationForm", "DonationFormSurface");}
+    <div class="col-sm-6" style="margin-left: 25%">
+        @if (Convert.ToBoolean(TempData["DonationSuccessful"]))
+        {
+            <div class="row">
+                @Umbraco.Field("confirmationMessage")
+            </div>
+            <div class="row" style="text-align: center">
+                <img src="@Umbraco.Media(CurrentPage.confirmationPhoto).umbracoFile.src" class="circular-image" style="max-width: 50%; max-height: 50%" />
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="@Umbraco.Media(CurrentPage.donateImage).umbracoFile.src" class="circular-image" style="max-height: 250px; max-width: 100%"/>
+                </div>
+                <div class="col-sm-9">
+                    @Umbraco.Field("appealLanguage")
+                </div>
+            </div>
+
+            if (Convert.ToBoolean(TempData["DonationError"]))
+            {
+                <div class="donation-error">
+                    @Umbraco.Field("donationErrorMessage")
+                </div>
+            }
+
+            <div class="row">
+                <div style="margin:0 25%" class="col-sm-6">
+                    @{Html.RenderAction("RenderDonationForm", "DonationFormSurface");}
+                </div>
+            </div>
+            <div class="donation-legal">
+                @Umbraco.Field("legalDonationLanguage")
+            </div>
+            <br />
+        }
         </div>
-    </div>
-    }
-    
 
 
-    <div class="row">
-        @Umbraco.Field("donationTaxInfo")
-    </div>
 </body>
