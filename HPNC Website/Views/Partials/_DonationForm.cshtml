@@ -11,8 +11,8 @@
 
     <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
     <script>
-        //var applicationId = 'sq0idp-VhvtshvxGtw1TpOlMiIrRA';
-        var applicationId = "sandbox-sq0idp-VhvtshvxGtw1TpOlMiIrRA"//sandbox
+        var applicationId = 'sq0idp-VhvtshvxGtw1TpOlMiIrRA';
+        //var applicationId = "sandbox-sq0idp-VhvtshvxGtw1TpOlMiIrRA"//sandbox
 
         // Initializes the payment form. See the documentation for descriptions of
         // each of these parameters.
@@ -104,72 +104,84 @@
         @Html.ValidationSummary(true)
         @Html.AntiForgeryToken()
 
-                <label>$ Amount</label>
-                @Html.TextBoxFor(model => model.Amount, new { @class = "form-control", style = "width: 10em" })
+            <label>$ Amount</label>
+            @Html.TextBoxFor(model => model.Amount, new { @class = "form-control", style = "width: 10em" })
+            <div style="color: red; font-size: 10px">
                 @Html.ValidationMessageFor(model => model.Amount)
-
-                <label>Name</label>
-                @Html.TextBoxFor(model => model.Name, new { placeholder = "Full Name", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Name)
+            </div>
                 
-                <label>Email</label>
-                @Html.TextBoxFor(model => model.Email, new { placeholder = "Email@email.com", @class = "form-control" })
+            <label>First Name</label>
+            @Html.TextBoxFor(model => model.FirstName, new { placeholder = "First Name", @class = "form-control" })
+            <div style="color: red; font-size: 10px">
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+
+            <label>Last Name</label>
+            @Html.TextBoxFor(model => model.LastName, new { placeholder = "Last Name", @class = "form-control" })
+            <div style="color: red; font-size: 10px">
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+
+
+            <label>Email</label>
+            @Html.TextBoxFor(model => model.Email, new { placeholder = "Email@email.com", @class = "form-control" })
+            <div style="color: red; font-size: 10px">
                 @Html.ValidationMessageFor(model => model.Email)
+            </div>
 
-                <br />
-                <div class="row">
-                    <label class="donation-header col-lg-10">Mailing Address</label>
-                </div>
-
-                <label>Street Address 1</label>
-                @Html.TextBoxFor(model => model.StreetAddress1, new { placeholder = "Street Address", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.StreetAddress1)
-
-                <label>Street Address 2</label>
-                @Html.TextBoxFor(model => model.StreetAddress2, new { placeholder = "Unit Number", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.StreetAddress2)
-
-                <label>City</label>
-                @Html.TextBoxFor(model => model.City, new { placeholder = "City", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.City)
-
-                <label>State</label>
-                @Html.TextBoxFor(model => model.State, new { placeholder = "State", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.State)
+            <label>Phone</label>
+            @Html.TextBoxFor(model => model.Phone, new { placeholder = "555-555-5555", @class = "form-control" })
 
 
-                <label>Postal Code</label>
-                @Html.TextBoxFor(model => model.ZipCode, new { placeholder = "Zip Code", id = "model-postal-code", @class = "form-control" })
+            <br />
+            <div class="row">
+                <label class="donation-header col-lg-10">Mailing Address</label>
+            </div>
 
-                @Html.TextBoxFor(model => model.Nonce, new { placeholder = "Nonce - will eventually hide", id = "card-nonce", type = "hidden" })
-                @Html.ValidationMessageFor(model => model.Nonce)
+            <label>Street Address 1</label>
+            @Html.TextBoxFor(model => model.StreetAddress1, new { placeholder = "Street Address", @class = "form-control" })
+            
+            <label>Street Address 2</label>
+            @Html.TextBoxFor(model => model.StreetAddress2, new { placeholder = "Unit Number", @class = "form-control" })
+            
+            <label>City</label>
+            @Html.TextBoxFor(model => model.City, new { placeholder = "City", @class = "form-control" })
+            
+            <label>State</label>
+            @Html.TextBoxFor(model => model.State, new { placeholder = "State", @class = "form-control" })
 
-                <br />
-                <div class="row">
-                    <label class="donation-header col-lg-10">Credit Card Info</label>
-                </div>
+            <label>Postal Code</label>
+            @Html.TextBoxFor(model => model.ZipCode, new { placeholder = "Zip Code", id = "model-postal-code", @class = "form-control" })
 
-                    <div>
-                        <label>Card Number</label>
-                        <div class="form-control" id="sq-card-number"></div>
-                    </div>
-                    <div style="width: 10em">
-                        <label>CVV</label>
-                        <div class="form-control" id="sq-cvv"></div>
-                    </div>
-                    <div style="width: 10em">
-                        <label>Expiration</label>
-                        <div class="form-control" id="sq-expiration-date"></div>
-                    </div>
-                    <div style="width: 10em">
-                        <label>Billing Postal Code</label>
-                        <div class="form-control" id="sq-postal-code"></div>
-                    </div>
+            @Html.TextBoxFor(model => model.Nonce, new { placeholder = "Nonce - will eventually hide", id = "card-nonce", type = "hidden" })
+            @Html.ValidationMessageFor(model => model.Nonce)
 
-                    <br />
+            <br />
+            <div class="row">
+                <label class="donation-header col-lg-10">Credit Card Info</label>
+            </div>
+
+            <div>
+                <label>Card Number</label>
+                <div required class="form-control" id="sq-card-number"></div>
+            </div>
+            <div style="width: 10em">
+                <label>CVV</label>
+                <div required class="form-control" id="sq-cvv"></div>
+            </div>
+            <div style="width: 10em">
+                <label>Expiration</label>
+                <div required class="form-control" id="sq-expiration-date"></div>
+            </div>
+            <div style="width: 10em">
+                <label>Billing Postal Code</label>
+                <div required class="form-control" id="sq-postal-code"></div>
+            </div>
+
+            <br />
             <input type="submit" onclick="requestCardNonce(event)">
-        <br />
+            <br />
 
-    }
+            }
 
 

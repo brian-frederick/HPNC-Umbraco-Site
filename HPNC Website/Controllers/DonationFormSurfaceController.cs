@@ -14,79 +14,57 @@ namespace HPNC_Website.Controllers
 {
     public class DonationFormSurfaceController : SurfaceController
     {
-       
+        string squareAuthorization = "sq0atp-y3yfJ9z11FzNCI-0yXsT3A";
+        string squareLocationId = "4TF4RMNFM5D9T";
+
+        //string squareLocationId = "CBASEAF9JuhJ7vWfEWKTYiRX57QgAQ"; //sandbox
+        //string squareAuthorization = "sandbox-sq0atb-uIKrJ7mof7lHpc8tBOU1HA"; //sandbox
+
         public ActionResult RenderDonationForm()
         {
             return PartialView("~/Views/Partials/_DonationForm.cshtml", new DonationFormModel());
-        }
-
-        public ActionResult RenderCreditCardForm(DonationFormModel model)
-        {
-            TempData["DonationInProcess"] = true;
-            TempData["DonationSuccessful"] = false;
-            TempData.Add("model", model);
-
-            return RedirectToCurrentUmbracoPage();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult BeginDonation(DonationFormModel model)
-        {
-
-
-
-            return PartialView("~/Views/Partials/_personalInfoForm.cshtml", model); 
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult HandleDonationForm(DonationFormModel model)
         {
-            //Check if the dat posted is valid (All required's & email set in email field)
             if (!ModelState.IsValid)
             {
 
-                //Not valid - so lets return the user back to the view with the data they entered still prepopulated
                 return CurrentUmbracoPage();
             }
-
-            //build API model
-            //string authorization = "sq0atp-y3yfJ9z11FzNCI-0yXsT3A";
-            string authorization = "sandbox-sq0atb-uIKrJ7mof7lHpc8tBOU1HA"; //sandbox
-            //string locationId = "4TF4RMNFM5D9T";
-            string locationId = "CBASEAF9JuhJ7vWfEWKTYiRX57QgAQ"; //sandbox
+           
             string key = Guid.NewGuid().ToString();
-            string fullName = model.Name;
             model.Amount = model.Amount * 100;
             Money money = new Money(model.Amount, Money.CurrencyEnum.USD);
 
             try
             {
-                ChargeRequest body = new ChargeRequest(AmountMoney: money, IdempotencyKey: key, CardNonce: model.Nonce);
+                var customerId = CreateCustomer(model);
+                ChargeRequest body = new ChargeRequest(key, money, model.Nonce, null, null, null, null, customerId);
                 TransactionApi transactionApi = new TransactionApi();
-                var response2 = transactionApi.Charge(authorization, locationId, body);
-                var confirm = response2;
+                var response = transactionApi.Charge(squareAuthorization, squareLocationId, body);
+                var confirm = response;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 TempData["DonationError"] = true;
-
-                //All done - lets redirect to the current page & show our thanks/success message
                 return RedirectToCurrentUmbracoPage();
             }
 
-            //Update success flag (in a TempData key)
             TempData["DonationSuccessful"] = true;
-
-            //All done - lets redirect to the current page & show our thanks/success message
             return RedirectToCurrentUmbracoPage();
         }
 
-        public void ChargeCard(DonationFormModel model)
+        public string CreateCustomer(DonationFormModel model)
         {
-
+            Address address = new Address(model.StreetAddress1, model.StreetAddress2, null, model.City, null, null, null, model.State, null, null, model.ZipCode, null, model.FirstName, model.LastName, null);
+            CreateCustomerRequest body = new CreateCustomerRequest(model.FirstName, model.LastName, null, null, model.Email, address, model.Phone, null, null);
+            CustomerApi customerAPI = new CustomerApi();
+            var response = customerAPI.CreateCustomer(squareAuthorization, body);
+            return response.Customer.Id;
         }
-
     }
 }

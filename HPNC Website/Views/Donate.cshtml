@@ -5,7 +5,8 @@
 
 
 <body>
-    <div class="col-sm-6" style="margin-left: 25%">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
         @if (Convert.ToBoolean(TempData["DonationSuccessful"]))
         {
             <div class="row">
@@ -23,18 +24,20 @@
                 </div>
                 <div class="col-sm-9">
                     @Umbraco.Field("appealLanguage")
+                    @if (Convert.ToBoolean(TempData["DonationError"]))
+                    {
+                        <div class="donation-error">
+                            @Umbraco.Field("donationErrorMessage")
+                        </div>
+                    }
                 </div>
             </div>
 
-            if (Convert.ToBoolean(TempData["DonationError"]))
-            {
-                <div class="donation-error">
-                    @Umbraco.Field("donationErrorMessage")
-                </div>
-            }
+            
 
             <div class="row">
-                <div style="margin:0 25%" class="col-sm-6">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
                     @{Html.RenderAction("RenderDonationForm", "DonationFormSurface");}
                 </div>
             </div>
