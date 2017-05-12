@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "WebBase.cshtml";
+}
+
+
+<div style="margin: 25px 60px">
+    @{ Html.RenderAction("RenderLogin", "Member"); }
+
+
+@if (Umbraco.MemberIsLoggedOn())
+{
+    <div>
+        @Umbraco.Field("boardDocsTitle")
+    </div>
+    
+        <p>Documents For Download</p>
+        <br />
+
+        if (CurrentPage.HasValue("boardDocs"))
+        {
+            foreach (var item in CurrentPage.boardDocs.Split(','))
+            {
+
+                var dynamicMediaItem = Umbraco.Media(item);
+                <div style="margin-left: 20px" class="row">
+                    <a href="@dynamicMediaItem.umbracoFile" style="cursor: pointer" download>@dynamicMediaItem.name</a>
+                </div>
+            }
+        }
+   
+}
+</div>

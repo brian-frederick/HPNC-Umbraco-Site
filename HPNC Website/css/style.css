@@ -751,3 +751,14 @@ figure.effect-honey:hover h2{
     font-size: 12px;
     font-style: italic;
 }
+.validation-summary-errors {
+    color: red;
+    border-color: red;
+    list-style: none;
+}
+.validation-summary-errors > ul{
+    list-style: none;
+}
+.validation-summary-errors > ul > li{
+    font-size: 10px;
+}

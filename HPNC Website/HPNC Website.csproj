@@ -315,6 +315,71 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\assets\logo_50.png" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\assets\twitter.png" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\css\archetype.css" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\js\archetype.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\da-dk.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\da.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\de-de.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\de.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\en-gb.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\en-us.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\en.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\es-es.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\es.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\fr-fr.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\he-il.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\it-it.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\ja-jp.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\ko-kr.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\nb-no.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\nl-nl.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\pl-pl.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\pt-br.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\ru-ru.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\sv-se.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\langs\zh-cn.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\views\archetype.config.developer.dialog.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\views\archetype.config.fieldset.dialog.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\views\archetype.config.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\views\archetype.config.stylescript.dialog.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\views\archetype.default.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\Archetype\views\archetype.html" />
+    <Content Include="App_Plugins\Archetype\assets\logo_50.png" />
+    <Content Include="App_Plugins\Archetype\assets\twitter.png" />
+    <Content Include="App_Plugins\Archetype\css\archetype.css" />
+    <Content Include="App_Plugins\Archetype\js\archetype.js" />
+    <Content Include="App_Plugins\Archetype\langs\da-dk.js" />
+    <Content Include="App_Plugins\Archetype\langs\da.js" />
+    <Content Include="App_Plugins\Archetype\langs\de-de.js" />
+    <Content Include="App_Plugins\Archetype\langs\de.js" />
+    <Content Include="App_Plugins\Archetype\langs\en-gb.js" />
+    <Content Include="App_Plugins\Archetype\langs\en-us.js" />
+    <Content Include="App_Plugins\Archetype\langs\en.js" />
+    <Content Include="App_Plugins\Archetype\langs\es-es.js" />
+    <Content Include="App_Plugins\Archetype\langs\es.js" />
+    <Content Include="App_Plugins\Archetype\langs\fr-fr.js" />
+    <Content Include="App_Plugins\Archetype\langs\he-il.js" />
+    <Content Include="App_Plugins\Archetype\langs\it-it.js" />
+    <Content Include="App_Plugins\Archetype\langs\ja-jp.js" />
+    <Content Include="App_Plugins\Archetype\langs\ko-kr.js" />
+    <Content Include="App_Plugins\Archetype\langs\nb-no.js" />
+    <Content Include="App_Plugins\Archetype\langs\nl-nl.js" />
+    <Content Include="App_Plugins\Archetype\langs\pl-pl.js" />
+    <Content Include="App_Plugins\Archetype\langs\pt-br.js" />
+    <Content Include="App_Plugins\Archetype\langs\ru-ru.js" />
+    <Content Include="App_Plugins\Archetype\langs\sv-se.js" />
+    <Content Include="App_Plugins\Archetype\langs\zh-cn.js" />
+    <Content Include="App_Plugins\Archetype\views\archetype.config.developer.dialog.html" />
+    <Content Include="App_Plugins\Archetype\views\archetype.config.fieldset.dialog.html" />
+    <Content Include="App_Plugins\Archetype\views\archetype.config.html" />
+    <Content Include="App_Plugins\Archetype\views\archetype.config.stylescript.dialog.html" />
+    <Content Include="App_Plugins\Archetype\views\archetype.default.html" />
+    <Content Include="App_Plugins\Archetype\views\archetype.html" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -326,37 +391,71 @@
     <Content Include="css\rte.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\assets\logo_50.png" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\assets\twitter.png" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\css\archetype.css" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\js\archetype.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\da-dk.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\da.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\de-de.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\de.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\en-gb.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\en-us.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\en.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\es-es.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\es.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\fr-fr.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\he-il.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\it-it.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\ja-jp.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\ko-kr.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\nb-no.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\nl-nl.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\pl-pl.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\pt-br.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\ru-ru.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\sv-se.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\langs\zh-cn.js" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.config.developer.dialog.html" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.config.fieldset.dialog.html" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.config.html" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.config.stylescript.dialog.html" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.default.html" />
-    <Content Include="App_Plugins\App_Plugins\Archetype\views\archetype.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\assets\logo_50.png" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\assets\twitter.png" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\css\archetype.css" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\js\archetype.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\da-dk.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\da.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\de-de.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\de.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\en-gb.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\en-us.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\en.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\es-es.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\es.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\fr-fr.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\he-il.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\it-it.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\ja-jp.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\ko-kr.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\nb-no.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\nl-nl.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\pl-pl.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\pt-br.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\ru-ru.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\sv-se.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\langs\zh-cn.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\views\archetype.config.developer.dialog.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\views\archetype.config.fieldset.dialog.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\views\archetype.config.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\views\archetype.config.stylescript.dialog.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\views\archetype.default.html" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\App_Plugins\Archetype\views\archetype.html" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\assets\logo_50.png" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\assets\twitter.png" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\css\archetype.css" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\js\archetype.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\da-dk.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\da.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\de-de.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\de.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\en-gb.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\en-us.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\en.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\es-es.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\es.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\fr-fr.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\he-il.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\it-it.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\ja-jp.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\ko-kr.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\nb-no.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\nl-nl.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\pl-pl.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\pt-br.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\ru-ru.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\sv-se.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\langs\zh-cn.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\views\archetype.config.developer.dialog.html" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\views\archetype.config.fieldset.dialog.html" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\views\archetype.config.html" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\views\archetype.config.stylescript.dialog.html" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\views\archetype.default.html" />
+    <Content Include="HPNCUmbraco\App_Plugins\Archetype\views\archetype.html" />
+    <Content Include="HPNCUmbraco\App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\ModelsBuilder\modelsbuilder.htm" />
+    <Content Include="HPNCUmbraco\App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
     <Content Include="HPNCUmbraco\bin\Archetype.dll" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -394,9 +493,11 @@
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
-    <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="HPNCUmbraco\App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -454,6 +555,9 @@
     <Content Include="Views\Volunteer.cshtml" />
     <Content Include="Views\Partials\_DonationForm.cshtml" />
     <Content Include="Views\ProgramsBase.cshtml" />
+    <Content Include="Views\Partials\_LoginForm.cshtml" />
+    <Content Include="Views\Partials\_LogoutForm.cshtml" />
+    <Content Include="Views\BoardDocuments.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -462,9 +566,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
-    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
-    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\ModelsBuilder\modelsbuilder.htm" />
+    <Content Include="App_Data\NuGetBackup\App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -486,13 +590,17 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DonationFormSurfaceController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\SiteLayoutController.cs" />
     <Compile Include="Models\DonationFormModel.cs" />
     <Compile Include="Models\FeaturedContent.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\NavigationLink.cs" />
     <Compile Include="Models\NavigationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -501,10 +609,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Views\DonationFormSurface\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

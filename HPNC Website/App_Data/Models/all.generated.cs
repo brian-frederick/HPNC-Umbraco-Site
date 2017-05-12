@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1316edb479ca0e74")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9e99c0f4ee0861f6")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -367,6 +367,24 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
+
+		///<summary>
+		/// Board Members: Add Board Members with bio and pictures
+		///</summary>
+		[ImplementPropertyType("boardMembers")]
+		public Archetype.Models.ArchetypeModel BoardMembers
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("boardMembers"); }
+		}
+
+		///<summary>
+		/// contentField: Add info about being a Board Member here.
+		///</summary>
+		[ImplementPropertyType("contentField")]
+		public IHtmlString ContentField
+		{
+			get { return this.GetPropertyValue<IHtmlString>("contentField"); }
+		}
 	}
 
 	/// <summary>Donate</summary>
@@ -613,6 +631,59 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString CorePageContent
 		{
 			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
+		}
+	}
+
+	/// <summary>Board Documents</summary>
+	[PublishedContentModel("boardDocuments")]
+	public partial class BoardDocuments : PublishedContentModel, IAdmin
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "boardDocuments";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public BoardDocuments(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BoardDocuments, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Board Docs
+		///</summary>
+		[ImplementPropertyType("boardDocs")]
+		public string BoardDocs
+		{
+			get { return this.GetPropertyValue<string>("boardDocs"); }
+		}
+
+		///<summary>
+		/// Board Docs Title
+		///</summary>
+		[ImplementPropertyType("boardDocsTitle")]
+		public string BoardDocsTitle
+		{
+			get { return this.GetPropertyValue<string>("boardDocsTitle"); }
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
 		}
 	}
 
