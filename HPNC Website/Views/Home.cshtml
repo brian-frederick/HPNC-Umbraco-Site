@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using Archetype.Models;
 @using Archetype.Extensions;
+@using HPNC_Website.Models;
 
 @{
     Layout = "WebBase.cshtml";
@@ -9,15 +10,15 @@
 <div class="container">
     @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("featuredContent"))
     {
-        var imageId = @fieldset.GetValue("image");
-        var image = Umbraco.Media(imageId);
+
+        var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
         var linkId = @fieldset.GetValue("page");
         var link = Umbraco.Content(linkId);
 
 
         <div class="col-lg-6">
             <figure>
-                <img src="@image.umbracoFile" alt="img01" class="home-featured-content" />
+                <img src="@imageSrc" alt="img01" class="home-featured-content" />
                 <figcaption class="home-title">
                     <h2><a href="@link.Url" title="" class="home-title">@fieldset.GetValue("name")</a></h2>
                 </figcaption>

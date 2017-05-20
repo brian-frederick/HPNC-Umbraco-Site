@@ -486,6 +486,8 @@
     <Content Include="Media\1010\sarahdiwan_thumb.jpg" />
     <Content Include="Media\1011\thereseferguson.jpg" />
     <Content Include="Media\1011\thereseferguson_thumb.jpg" />
+    <Content Include="Media\1012\johnhill.jpg" />
+    <Content Include="Media\1012\johnhill_thumb.jpg" />
     <Content Include="Media\BasePics\hpnc-logo-1.png" />
     <Content Include="Media\BasePics\hpnc-logo-fam.png" />
     <Content Include="Media\BasePics\hpnc-logo-fam_thumb.png" />
@@ -498,6 +500,10 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="HPNCUmbraco\App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="Media\1013\testpdf.pdf" />
+    <Content Include="Media\1014\test-spreadsheet.xlsx" />
+    <Content Include="Media\1015\testdoc.docx" />
+    <None Include="Properties\PublishProfiles\hpnclub - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -518,6 +524,7 @@
     <Content Include="config\UrlRewriting.config" />
     <Content Include="config\umbracoSettings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="config\trees.config" />
     <Content Include="config\tinyMceConfig.config" />
@@ -598,6 +605,7 @@
     <Compile Include="Controllers\DonationFormSurfaceController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\SiteLayoutController.cs" />
+    <Compile Include="Models\customURLHelper.cs" />
     <Compile Include="Models\DonationFormModel.cs" />
     <Compile Include="Models\FeaturedContent.cs" />
     <Compile Include="Models\LoginModel.cs" />

@@ -1,4 +1,6 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using HPNC_Website.Models;
+
 @{
 	Layout = "WebBase.cshtml";
 }
@@ -17,17 +19,18 @@
         <p>Documents For Download</p>
         <br />
 
-        if (CurrentPage.HasValue("boardDocs"))
+    if (CurrentPage.HasValue("boardDocs"))
+    {
+        foreach (var item in CurrentPage.boardDocs.Split(','))
         {
-            foreach (var item in CurrentPage.boardDocs.Split(','))
-            {
+            var dynamicMediaItem = Umbraco.Media(item);
+            var fileHref = customURLHelper.UmbracoFile(dynamicMediaItem.umbracoFile);
 
-                var dynamicMediaItem = Umbraco.Media(item);
-                <div style="margin-left: 20px" class="row">
-                    <a href="@dynamicMediaItem.umbracoFile" style="cursor: pointer" download>@dynamicMediaItem.name</a>
-                </div>
-            }
+            <div style="margin-left: 20px" class="row">
+                <a href="@fileHref" style="cursor: pointer" download>@dynamicMediaItem.name</a>
+            </div>
         }
+    }
    
 }
 </div>
