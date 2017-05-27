@@ -1,18 +1,21 @@
 ﻿
 @using HPNC_Website.Controllers
 @using HPNC_Website.Models
+@using System.Configuration
 @model DonationFormModel
 
 @{
     Html.EnableClientValidation(true);
     Html.EnableUnobtrusiveJavaScript(true);
+    var applicationId = ConfigurationManager.AppSettings["SquareApplicationId"];
 }
 
 
     <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
     <script>
-        var applicationId = 'sq0idp-VhvtshvxGtw1TpOlMiIrRA';
-        //var applicationId = "sandbox-sq0idp-VhvtshvxGtw1TpOlMiIrRA"//sandbox
+
+        var applicationId = "@applicationId";
+
 
         // Initializes the payment form. See the documentation for descriptions of
         // each of these parameters.

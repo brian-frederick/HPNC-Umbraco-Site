@@ -9,13 +9,17 @@ using Umbraco.Web.Mvc;
 using Square.Connect.Api;
 using Square.Connect.Client;
 using Square.Connect.Model;
+using System.Configuration;
 
 namespace HPNC_Website.Controllers
 {
     public class DonationFormSurfaceController : SurfaceController
     {
-        string squareAuthorization = "sq0atp-y3yfJ9z11FzNCI-0yXsT3A";
-        string squareLocationId = "4TF4RMNFM5D9T";
+
+        string squareAuthorization = ConfigurationManager.AppSettings["SquareAuth"];
+        string squareLocationId = ConfigurationManager.AppSettings["SquareLocationID"];
+        //string squareAuthorization = "sq0atp-y3yfJ9z11FzNCI-0yXsT3A";
+        //string squareLocationId = "4TF4RMNFM5D9T";
 
         //string squareLocationId = "CBASEAF9JuhJ7vWfEWKTYiRX57QgAQ"; //sandbox
         //string squareAuthorization = "sandbox-sq0atb-uIKrJ7mof7lHpc8tBOU1HA"; //sandbox
@@ -34,7 +38,8 @@ namespace HPNC_Website.Controllers
 
                 return CurrentUmbracoPage();
             }
-           
+
+
             string key = Guid.NewGuid().ToString();
             model.Amount = model.Amount * 100;
             Money money = new Money(model.Amount, Money.CurrencyEnum.USD);
@@ -47,7 +52,7 @@ namespace HPNC_Website.Controllers
                 var response = transactionApi.Charge(squareAuthorization, squareLocationId, body);
                 var confirm = response;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 TempData["DonationError"] = true;

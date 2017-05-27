@@ -220,6 +220,11 @@ blue2: #00687f
     color:#fff;
 	text-transform:uppercase;
 }
+
+#navbar-items {
+    min-width: 92% !important;
+}
+
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
     color:#fff;
 	background-color:#5f6062;
