@@ -488,6 +488,9 @@
     <Content Include="Media\1011\thereseferguson_thumb.jpg" />
     <Content Include="Media\1012\johnhill.jpg" />
     <Content Include="Media\1012\johnhill_thumb.jpg" />
+    <Content Include="Media\1016\the_pup.jpg" />
+    <Content Include="Media\1016\the_pup_big-thumb.jpg" />
+    <Content Include="Media\1016\the_pup_thumb.jpg" />
     <Content Include="Media\BasePics\hpnc-logo-1.png" />
     <Content Include="Media\BasePics\hpnc-logo-fam.png" />
     <Content Include="Media\BasePics\hpnc-logo-fam_thumb.png" />

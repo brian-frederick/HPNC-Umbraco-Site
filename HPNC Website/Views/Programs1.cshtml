@@ -1,5 +1,148 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+@using HPNC_Website.Models;
+
 @{
 	Layout = "WebBase.cshtml";
 }
-i am programs
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 programs-topnav">
+            <a href="#earl" title="EARLY CHILDHOOD">EARLY CHILDHOOD</a> |
+            <a href="#schoo" title="SCHOOL'S OUT">SCHOOL'S OUT</a> |
+            <a href="#athl" title="ATHLETICS">ATHLETICS</a> |
+            <a href="#part" title="PARTNERS">PARTNERS</a> |
+            <a href="#ment" title="MENTORING">MENTORING</a> |
+            <a href="#enri" title="ENRICHMENT">ENRICHMENT</a>
+        </div>
+    </div>
+
+    <a name="earl"></a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="programs-sectiontitle">EARLY CHILDHOOD</div>
+        </div>
+        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("earlyChildhoodPrograms"))
+        {
+
+            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
+            var linkId = @fieldset.GetValue("page");
+            var link = Umbraco.Content(linkId);
+            var name = fieldset.GetValue("name");
+
+        <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
+            <a href="@link.Url">
+                <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
+                <div class="programs-title">@name</div>
+            </a>
+        </div>
+        }       
+    </div>
+
+    <a name="schoo"></a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="programs-sectiontitle">SCHOOL'S OUT</div>
+        </div>
+        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("afterSchoolPrograms"))
+        {
+            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
+            var linkId = @fieldset.GetValue("page");
+            var link = Umbraco.Content(linkId);
+            var name = fieldset.GetValue("name");
+
+            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
+                <a href="@link.Url">
+                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
+                    <div class="programs-title">@name</div>
+                </a>
+            </div>
+        }
+    </div>
+
+    <a name="athl"></a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="programs-sectiontitle">ATHLETICS</div>
+        </div>
+        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("athleticsPrograms"))
+        {
+            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
+            var linkId = @fieldset.GetValue("page");
+            var link = Umbraco.Content(linkId);
+            var name = fieldset.GetValue("name");
+
+            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
+                <a href="@link.Url">
+                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
+                    <div class="programs-title">@name</div>
+                </a>
+            </div>
+        }
+    </div>
+
+    <a name="part"></a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="programs-sectiontitle">PARTNERS</div>
+        </div>
+        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("partnersPrograms"))
+        {
+            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
+            var linkId = @fieldset.GetValue("page");
+            var link = Umbraco.Content(linkId);
+            var name = fieldset.GetValue("name");
+
+            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
+                <a href="@link.Url">
+                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
+                    <div class="programs-title">@name</div>
+                </a>
+            </div>
+        }
+    </div>
+
+    <a name="ment"></a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="programs-sectiontitle">MENTORING</div>
+        </div>
+        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("mentoringPrograms"))
+        {
+            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
+            var linkId = @fieldset.GetValue("page");
+            var link = Umbraco.Content(linkId);
+            var name = fieldset.GetValue("name");
+
+            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
+                <a href="@link.Url">
+                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
+                    <div class="programs-title">@name</div>
+                </a>
+            </div>
+        }
+    </div>
+
+    <a name="enri"></a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="programs-sectiontitle">Enrichment</div>
+        </div>
+        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("enrichmentPrograms"))
+        {
+            var test = fieldset.GetValue("name");
+            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
+            var linkId = @fieldset.GetValue("page");
+            var link = Umbraco.Content(linkId);
+            var name = fieldset.GetValue("name");
+
+            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
+                <a href="@link.Url">
+                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
+                    <div class="programs-title">@name</div>
+                </a>
+            </div>
+        }
+    </div>
+</div>  
