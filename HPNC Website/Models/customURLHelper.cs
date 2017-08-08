@@ -11,13 +11,20 @@ namespace HPNC_Website.Models
         
         public static string UmbracoFile(string partialURL)
         {
-            var BaseURL = ConfigurationManager.AppSettings["BaseURL"];
+            if (partialURL != "")
+            {
+                var BaseURL = ConfigurationManager.AppSettings["BaseURL"];
 
-            var imageIndex = partialURL.IndexOf("/media");
-            var clippedPartialURL = partialURL.Substring(imageIndex);
+                var imageIndex = partialURL.IndexOf("/media");
+                var clippedPartialURL = partialURL.Substring(imageIndex);
 
-            var completeURL = BaseURL + clippedPartialURL;
-            return completeURL;
+                var completeURL = BaseURL + clippedPartialURL;
+                return completeURL;
+            }
+            else
+            {
+                return partialURL;
+            }
         }
     }
 }
