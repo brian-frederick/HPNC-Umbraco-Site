@@ -1,0 +1,105 @@
+﻿ 2017-06-26 22:24:37,527 [P11004/D4/T184] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://localhost:80/HPNCUmbraco/umbraco").
+System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: TCP Provider, error: 0 - The network connection was aborted by the local system.) ---> System.ComponentModel.Win32Exception (0x80004005): The network connection was aborted by the local system
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.TdsParser.TdsExecuteTransactionManagerRequest(Byte[] buffer, TransactionManagerRequestType request, String transactionName, TransactionManagerIsolationLevel isoLevel, Int32 timeout, SqlInternalTransaction transaction, TdsParserStateObject stateObj, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnectionTds.ExecuteTransactionYukon(TransactionRequest transactionRequest, String transactionName, IsolationLevel iso, SqlInternalTransaction internalTransaction, Boolean isDelegateControlRequest)
+   at System.Data.SqlClient.SqlInternalConnection.BeginSqlTransaction(IsolationLevel iso, String transactionName, Boolean shouldReconnect)
+   at System.Data.SqlClient.SqlConnection.BeginTransaction(IsolationLevel iso, String transactionName)
+   at System.Data.SqlClient.SqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
+   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
+   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
+   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
+   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
+   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
+   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
+   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__7.MoveNext()
+ClientConnectionId:3c64583a-f463-47e7-92cf-9ea5a5975653
+Error Number:1236,State:0,Class:20
+ 2017-06-24 23:58:56,245 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2017-06-24 23:58:56,245 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2017-06-24 23:58:56,253 [P11004/D4/T636] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2017-06-24 23:58:56,256 [P11004/D4/T639] INFO  Umbraco.Core.MainDom - Stopping...
+ 2017-06-24 23:58:56,260 [P11004/D4/T639] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2017-06-24 23:58:56,261 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2017-06-24 23:58:56,261 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2017-06-24 23:58:56,261 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2017-06-24 23:58:56,261 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2017-06-24 23:58:56,261 [P11004/D4/T604] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2017-06-24 23:58:56,262 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2017-06-24 23:58:56,262 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2017-06-24 23:58:56,262 [P11004/D4/T6] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2017-06-24 23:58:56,263 [P11004/D4/T606] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2017-06-24 23:58:56,273 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2017-06-24 23:58:56,273 [P11004/D4/T639] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2017-06-24 23:58:56,273 [P11004/D4/T628] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2017-06-24 23:58:58,598 [P11004/D5/T77] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.13 application starting on DESKTOP-RC431IF
+ 2017-06-24 23:58:58,620 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-06-24 23:58:58,636 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Hash determined (took 16ms)
+ 2017-06-24 23:58:58,668 [P11004/D5/T77] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-06-24 23:58:58,668 [P11004/D5/T77] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-06-24 23:58:58,678 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-06-24 23:58:58,697 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 18ms)
+ 2017-06-24 23:58:58,731 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-06-24 23:58:58,732 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
+ 2017-06-24 23:58:58,732 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-06-24 23:58:58,734 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 1ms)
+ 2017-06-24 23:58:58,747 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-06-24 23:58:58,749 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 2ms)
+ 2017-06-24 23:58:58,750 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-06-24 23:58:58,755 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 5ms)
+ 2017-06-24 23:58:58,800 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-06-24 23:58:58,801 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 0ms)
+ 2017-06-24 23:58:58,801 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-06-24 23:58:58,802 [P11004/D5/T77] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2017-06-24 23:59:00,650 [P11004/D5/T77] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-06-24 23:59:00,982 [P11004/D5/T77] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-06-24 23:59:01,021 [P11004/D5/T77] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-06-24 23:59:01,219 [P11004/D5/T77] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-06-24 23:59:01,367 [P11004/D5/T77] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2854ms)
+ 2017-06-24 23:59:04,970 [P11004/D5/T628] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:80/HPNCUmbraco/umbraco (UmbracoModule request)
+ 2017-06-24 23:59:07,394 [P11004/D5/T606] INFO  umbraco.content - Load Xml from file...
+ 2017-06-24 23:59:07,397 [P11004/D5/T606] INFO  umbraco.content - Loaded Xml from file.
+ 2017-06-24 23:59:08,629 [P11004/D5/T606] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-06-24 23:59:08,632 [P11004/D5/T606] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 2ms)
+ 2017-06-24 23:59:09,089 [P11004/D5/T606] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2017-06-24 23:59:09,090 [P11004/D5/T606] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 1ms)
+ 2017-06-24 23:59:26,292 [P11004/D4/T638] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: BinDirChangeOrDirectoryRename
+
+_shutDownMessage=Change Notification for critical directories.
+bin dir change or directory rename
+HostingEnvironment initiated shutdown
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.HttpRuntime.OnCriticalDirectoryChange(Object sender, FileChangeEvent e)
+   at System.Web.FileChangesMonitor.OnCriticaldirChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+ 2017-06-24 23:59:34,020 [P11004/D5/T631] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.

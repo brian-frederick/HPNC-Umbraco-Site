@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9e99c0f4ee0861f6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "42c497ede8f7f054")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -587,6 +587,60 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Programs1, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// After School Programs: Add After School Programs Here
+		///</summary>
+		[ImplementPropertyType("afterSchoolPrograms")]
+		public Archetype.Models.ArchetypeModel AfterSchoolPrograms
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("afterSchoolPrograms"); }
+		}
+
+		///<summary>
+		/// Athletics Programs: Add Athletics Programs here
+		///</summary>
+		[ImplementPropertyType("athleticsPrograms")]
+		public Archetype.Models.ArchetypeModel AthleticsPrograms
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("athleticsPrograms"); }
+		}
+
+		///<summary>
+		/// Early Childhood Programs: Add Early Childhood Programs here
+		///</summary>
+		[ImplementPropertyType("earlyChildhoodPrograms")]
+		public Archetype.Models.ArchetypeModel EarlyChildhoodPrograms
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("earlyChildhoodPrograms"); }
+		}
+
+		///<summary>
+		/// Enrichment Programs: Add Enrichment Programs here
+		///</summary>
+		[ImplementPropertyType("enrichmentPrograms")]
+		public Archetype.Models.ArchetypeModel EnrichmentPrograms
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("enrichmentPrograms"); }
+		}
+
+		///<summary>
+		/// Mentoring Programs: Add Mentoring Programs here
+		///</summary>
+		[ImplementPropertyType("mentoringPrograms")]
+		public Archetype.Models.ArchetypeModel MentoringPrograms
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("mentoringPrograms"); }
+		}
+
+		///<summary>
+		/// Partners Programs: Add Partners Programs here
+		///</summary>
+		[ImplementPropertyType("partnersPrograms")]
+		public Archetype.Models.ArchetypeModel PartnersPrograms
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("partnersPrograms"); }
 		}
 
 		///<summary>
