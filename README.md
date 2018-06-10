@@ -10,7 +10,9 @@ This project was created as part of the Nerdery's 24 Hour coding challenge and h
 ### Installing
 
 ## Troubleshooting
-* If you receive error about missing index, delete all files in \HPNC\HPNC Website\App_Data\TEMP\ExamineIndexes\Internal\Index 
+* If you receive something about missing index such as...
+```[FileNotFoundException: Could not find file 'C:...HPNC\HPNC Website\App_Data\TEMP\ExamineIndexes\Internal\Index\segments_6j'.]```
+delete all files in \HPNC\HPNC Website\App_Data\TEMP\ExamineIndexes
 
 * If you receive an error regarding Archetype while building, download Archetype (https://our.umbraco.org/projects/backoffice-extensions/archetype/)  yourself. Then using file explorer, just copy and paste the archetype.dll file into the HPNC project. (HPNC Project folder >  HPNCUmbraco folder > bin).
 
@@ -19,6 +21,8 @@ This project was created as part of the Nerdery's 24 Hour coding challenge and h
 ``` <add key="BaseURL" value="http://localhost/" />```
 
 Change the BaseURL value to match your own localhost root, such as `value="http://localhost:8800/"`.
+
+*  ```"Server Error in '/HPNCUmbraco' Application. Umbraco cannot start. A connection string is configured but Umbraco cannot connect to the database." ``` This application's DB is firewalled to foreign IP addresses. Request access to the DB through github.  
 
 ## Deployment
 This project is currently deployed through the Azure Portal.
