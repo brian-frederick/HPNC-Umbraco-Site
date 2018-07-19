@@ -771,3 +771,6 @@ figure.effect-honey:hover h2{
 .validation-summary-errors > ul > li{
     font-size: 10px;
 }
+.board-documents-link{
+    margin-top: 20px;
+}

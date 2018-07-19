@@ -272,3 +272,7 @@ paket-files/
 # ImageProcessor DiskCache 
 **/App_Data/cache/
 HPNC Website/App_Data/umbraco.config
+HPNC Website/css/style.css
+HPNC Website/Views/Board.cshtml
+HPNC Website/css/style.css
+HPNC Website/Views/Board.cshtml

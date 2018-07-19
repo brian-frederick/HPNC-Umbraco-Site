@@ -12,21 +12,31 @@
 
     <div class="row">
         @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("boardMembers"))
-        {
-            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(@fieldset.GetValue("image")).umbracoFile.ToString());
+    {
+        var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(@fieldset.GetValue("image")).umbracoFile.ToString());
 
-            <div class="col-lg-6">
-                <div class="row">
-                    <div style="vertical-align:middle" class="col-sm-3">
-                        <img src="@imageSrc" class="bio-image circular-image" />
-                    </div>
-                    <div class="col-sm-9" >
-                        <h2 style="color: #337ab7">@fieldset.GetValue("name")</h2>
-                        <i>@fieldset.GetValue("position")</i>
-                        <p class="bio-description">@fieldset.GetValue("description")</p>
-                    </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div style="vertical-align:middle" class="col-sm-3">
+                    <img src="@imageSrc" class="bio-image circular-image" />
+                </div>
+                <div class="col-sm-9">
+                    <h2 style="color: #337ab7">@fieldset.GetValue("name")</h2>
+                    <i>@fieldset.GetValue("position")</i>
+                    <p class="bio-description">@fieldset.GetValue("description")</p>
                 </div>
             </div>
-        }
+        </div>
+}
+        <div class="col-md-6 col-md-offset-3 text--center">
+            <p class="board-documents-link"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;&nbsp;<a class="btn btn-default" href="~/board-documents" title="Board Documents">Board Documents</a></p>
+
+        </div>
+        @*<div class="col-md-6 col-md-offset-3 text--center">
+            <p style="margin-top: 20px;"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;&nbsp;<a class="btn btn-default" href="~/board-documents" title="Board Documents">Board Documents</a></p>
+
+        </div>*@
+
     </div>
+    
 </div>
