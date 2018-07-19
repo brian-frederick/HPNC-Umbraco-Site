@@ -771,13 +771,6 @@ figure.effect-honey:hover h2{
 .validation-summary-errors > ul > li{
     font-size: 10px;
 }
-
-
-/* Volunteer Page */
-.centered-google-form > p {
-    text-align: center;
-}
-
-.centered-google-form > p > iframe{
-    max-width: 675px;
+.board-documents-link{
+    margin-top: 20px;
 }
