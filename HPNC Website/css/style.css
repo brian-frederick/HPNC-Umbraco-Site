@@ -807,3 +807,7 @@ figure.effect-honey:hover h2{
     padding-right: 5px;
 }
 
+.centered-google-form > p > iframe {
+    max-width: 675px;
+}
+
