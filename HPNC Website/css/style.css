@@ -382,9 +382,16 @@ blue2: #00687f
     -webkit-transition: 0.4s; /* Safari */
     transition: 0.4s;
     }
-.mission-vol-btn {background-color:#fdbb30; margin-right:30px;}
+.mission-vol-btn {
+    background-color: #fdbb30;
+    margin-right: 30px;
+    border-radius: 50px;
+}
 .mission-vol-btn:hover {background-color:#f6ac10;}
-.mission-don-btn {background-color:#f26531;}
+.mission-don-btn {
+    background-color: #f26531;
+    border-radius: 50px;
+}
 .mission-don-btn:hover {background-color:#ee480a;}
 
 @media (max-width: 500px) {
@@ -395,7 +402,10 @@ blue2: #00687f
 		display:block;
 		margin:0 auto;
 	}
-	.mission-don-btn {margin-top:20px;}
+	.mission-don-btn {
+        margin-top:20px;
+
+	}
 }
 
 
@@ -804,15 +814,14 @@ figure.effect-honey:hover h2{
 }
 
 /**Board Page*/
-.glyphicon-file {
-    color: #008fb0;
-    padding-right: 5px;
-}
-
 .board-documents {
     margin: 15px 0 5px;
 }
 
+.board-documents > a > .glyphicon-file {
+    color: #008fb0;
+    margin-right: 5px;
+}
 /**End Board Page*/
 
 
