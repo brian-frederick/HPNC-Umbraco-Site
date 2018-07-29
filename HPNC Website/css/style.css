@@ -803,12 +803,20 @@ figure.effect-honey:hover h2{
     font-size: 10px;
 }
 
-
-/* Volunteer Page */
-.centered-google-form > p {
-    text-align: center;
+/**Board Page*/
+.glyphicon-file {
+    color: #008fb0;
+    padding-right: 5px;
 }
 
-.centered-google-form > p > iframe{
+.board-documents {
+    margin: 15px 0 5px;
+}
+
+/**End Board Page*/
+
+
+.centered-google-form > p > iframe {
     max-width: 675px;
 }
+
