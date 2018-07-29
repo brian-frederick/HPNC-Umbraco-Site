@@ -802,10 +802,19 @@ figure.effect-honey:hover h2{
 .validation-summary-errors > ul > li{
     font-size: 10px;
 }
+
+/**Board Page*/
 .glyphicon-file {
     color: #008fb0;
     padding-right: 5px;
 }
+
+.board-documents {
+    margin: 15px 0 5px;
+}
+
+/**End Board Page*/
+
 
 .centered-google-form > p > iframe {
     max-width: 675px;
