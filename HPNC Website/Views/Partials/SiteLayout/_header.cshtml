@@ -38,40 +38,37 @@
 
 @helper RenderChildItems(List<NavigationListItem> listItems)
 {
-int startingMargin = 18;
 
-int widthCount = startingMargin -  (listItems.Count * 2);
-string widthString = widthCount + "%";
-if (listItems != null)
-{
-    foreach (var item in listItems)
+    if (listItems != null)
     {
-            <li class="dropdown" style="margin-right:@widthString">
-                @if (!String.IsNullOrEmpty(item.Text))
-                {
-                    @item.Text
+        foreach (var item in listItems)
+        {
+                <li class="dropdown" >
+                    @if (!String.IsNullOrEmpty(item.Text))
+                    {
+                        @item.Text
+        }
+                    else if (item.Link != null)
+                    {
+                        <a href="@item.Link.Url"  id="@item.Text" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null) 
+                           @(item.HasChildren ? "dropdown-toggle" : null)" >@item.Link.Text</a>
+                    }
+
+                    @if (item.HasChildren)
+    {
+                        <ul class="dropdown-menu">
+
+                            @foreach (var child in item.Items)
+    {
+                                <li class="dropdown-item">
+                                    <a href="@child.Link.Url">@child.Link.Text</a>
+                                </li>
+                            }
+
+                        </ul>
+
+                    }
+                </li>
+        }
     }
-                else if (item.Link != null)
-                {
-                    <a href="@item.Link.Url"  id="@item.Text" class="@(Umbraco.AssignedContentItem.Url == item.Link.Url ? "active" : null) 
-                       @(item.HasChildren ? "dropdown-toggle" : null)" >@item.Link.Text</a>
-                }
-
-                @if (item.HasChildren)
-{
-                    <ul class="dropdown-menu">
-
-                        @foreach (var child in item.Items)
-{
-                            <li class="dropdown-item">
-                                <a href="@child.Link.Url">@child.Link.Text</a>
-                            </li>
-                        }
-
-                    </ul>
-
-                }
-            </li>
-    }
-}
 }

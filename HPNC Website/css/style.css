@@ -207,6 +207,9 @@ blue2: #00687f
 }
 /* END TIMELINE*/
 
+
+/* Header Navbar*/
+
 .navbar {
 	color:#fff;
 	background-color:#5f6062;
@@ -219,6 +222,11 @@ blue2: #00687f
     margin-left: -15px;
     margin-right: -15px;
 }
+
+.navbar-nav > li {
+    margin-right: 1.5em;
+}
+
 .navbar-nav > li a {
     float: left;
     color:#fff;
@@ -227,6 +235,7 @@ blue2: #00687f
 
 #navbar-items {
     min-width: 92% !important;
+    padding-right: 90px;
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
@@ -275,22 +284,33 @@ blue2: #00687f
     }
 
     .topnav-donate {
-        float: right;
-        display: inline-block;
-    }
-
-    .topnav-donate {
         display: none;
     }
 
     .navbar-nav > li a {
         float: none;
     }
+
+    #navbar-items {
+        position: absolute;
+        top: 43px;
+        z-index: 100;
+        width: 100%;
+        padding-right: 0px;
+        background-color: #5f6062;
+    }
 }
+
 .topnav-donate-btn {
 	background-color:#f26531;
     -webkit-transition: 0.4s; /* Safari */
     transition: 0.4s;
+    position: absolute !important;
+    right: 0;
+}
+
+.topnav-donate > li {
+    margin-right: 0px;
 }
 
 
@@ -317,7 +337,9 @@ blue2: #00687f
 	}
 }
 
+/* End Header Navbar*/
 
+/* Footer */
 
 .mission-footer-container {
 	background-color:#ddd;
