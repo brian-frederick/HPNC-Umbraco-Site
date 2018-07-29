@@ -771,6 +771,8 @@ figure.effect-honey:hover h2{
 .validation-summary-errors > ul > li{
     font-size: 10px;
 }
-.board-documents-link{
-    margin-top: 20px;
+.glyphicon-file {
+    color: #008fb0;
+    padding-right: 5px;
 }
+
