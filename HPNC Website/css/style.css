@@ -270,14 +270,23 @@ blue2: #00687f
 }
 
 @media (max-width: 768px) {
-	.topnav-logo-fam {display:none;}
-	.topnav-donate {
-	float:right;
-	display:inline-block;
-	}
-  	.topnav-donate {display: none;}
-}
+    .topnav-logo-fam {
+        display: none;
+    }
 
+    .topnav-donate {
+        float: right;
+        display: inline-block;
+    }
+
+    .topnav-donate {
+        display: none;
+    }
+
+    .navbar-nav > li a {
+        float: none;
+    }
+}
 .topnav-donate-btn {
 	background-color:#f26531;
     -webkit-transition: 0.4s; /* Safari */
