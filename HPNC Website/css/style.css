@@ -812,7 +812,9 @@ figure.effect-honey:hover h2{
 .validation-summary-errors > ul > li{
     font-size: 10px;
 }
-
+.board-documents-link {
+    margin-top: 20px;
+}
 /**Board Page*/
 .board-documents {
     margin: 15px 0 5px;
@@ -828,4 +830,3 @@ figure.effect-honey:hover h2{
 .centered-google-form > p > iframe {
     max-width: 675px;
 }
-
