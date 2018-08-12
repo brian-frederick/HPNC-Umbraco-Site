@@ -207,6 +207,9 @@ blue2: #00687f
 }
 /* END TIMELINE*/
 
+
+/* Header Navbar*/
+
 .navbar {
 	color:#fff;
 	background-color:#5f6062;
@@ -219,6 +222,11 @@ blue2: #00687f
     margin-left: -15px;
     margin-right: -15px;
 }
+
+.navbar-nav > li {
+    margin-right: 1.5em;
+}
+
 .navbar-nav > li a {
     float: left;
     color:#fff;
@@ -227,6 +235,7 @@ blue2: #00687f
 
 #navbar-items {
     min-width: 92% !important;
+    padding-right: 90px;
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
@@ -270,18 +279,38 @@ blue2: #00687f
 }
 
 @media (max-width: 768px) {
-	.topnav-logo-fam {display:none;}
-	.topnav-donate {
-	float:right;
-	display:inline-block;
-	}
-  	.topnav-donate {display: none;}
+    .topnav-logo-fam {
+        display: none;
+    }
+
+    .topnav-donate {
+        display: none;
+    }
+
+    .navbar-nav > li a {
+        float: none;
+    }
+
+    #navbar-items {
+        position: absolute;
+        top: 43px;
+        z-index: 100;
+        width: 100%;
+        padding-right: 0px;
+        background-color: #5f6062;
+    }
 }
 
 .topnav-donate-btn {
 	background-color:#f26531;
     -webkit-transition: 0.4s; /* Safari */
     transition: 0.4s;
+    position: absolute !important;
+    right: 0;
+}
+
+.topnav-donate > li {
+    margin-right: 0px;
 }
 
 
@@ -308,7 +337,9 @@ blue2: #00687f
 	}
 }
 
+/* End Header Navbar*/
 
+/* Footer */
 
 .mission-footer-container {
 	background-color:#ddd;
@@ -351,9 +382,16 @@ blue2: #00687f
     -webkit-transition: 0.4s; /* Safari */
     transition: 0.4s;
     }
-.mission-vol-btn {background-color:#fdbb30; margin-right:30px;}
+.mission-vol-btn {
+    background-color: #fdbb30;
+    margin-right: 30px;
+    border-radius: 50px;
+}
 .mission-vol-btn:hover {background-color:#f6ac10;}
-.mission-don-btn {background-color:#f26531;}
+.mission-don-btn {
+    background-color: #f26531;
+    border-radius: 50px;
+}
 .mission-don-btn:hover {background-color:#ee480a;}
 
 @media (max-width: 500px) {
@@ -364,7 +402,10 @@ blue2: #00687f
 		display:block;
 		margin:0 auto;
 	}
-	.mission-don-btn {margin-top:20px;}
+	.mission-don-btn {
+        margin-top:20px;
+
+	}
 }
 
 
@@ -771,17 +812,21 @@ figure.effect-honey:hover h2{
 .validation-summary-errors > ul > li{
     font-size: 10px;
 }
-
-.board-documents-link{
+.board-documents-link {
     margin-top: 20px;
 }
-
-/* Volunteer Page */
-.centered-google-form > p {
-    text-align: center;
+/**Board Page*/
+.board-documents {
+    margin: 15px 0 5px;
 }
 
-.centered-google-form > p > iframe{
+.board-documents > a > .glyphicon-file {
+    color: #008fb0;
+    margin-right: 5px;
+}
+/**End Board Page*/
+
+
+.centered-google-form > p > iframe {
     max-width: 675px;
 }
- 
