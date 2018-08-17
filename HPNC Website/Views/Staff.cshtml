@@ -16,7 +16,7 @@
         @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("staffMembers"))
         {
 
-            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(@fieldset.GetValue("image")).umbracoFile.ToString());
+            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(@fieldset.GetValue("image")).Url.ToString());
 
             <div class="col-lg-6">
                 <div class="row">
