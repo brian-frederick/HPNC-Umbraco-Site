@@ -512,6 +512,11 @@ blue2: #00687f
 	border-bottom:2px #fff solid;
 }
 
+.home-title-header {
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center !important;
+}
 
 a.home-title {
     color:#fdbb30;
@@ -519,10 +524,15 @@ a.home-title {
     position: absolute;
     z-index: 100;
 }
-a.home-title:hover {
+a.home-title-link:hover {
     color:#f26531;
     padding-bottom: 35%;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+
+.home-title-link {
+    color:white;
+    margin-top: -120px;
 }
 .campHeaders {text-align:center;}
 .campButton {text-align:right;}
@@ -532,8 +542,12 @@ a.home-title:hover {
     position: relative;
     overflow: hidden;
     width: 80%;
-    margin-left: 10%;
     border-radius: 100%;
+}
+
+.hpnc-tile {
+    margin-bottom: 25px;
+    text-align: center;
 }
 
 .grid {
