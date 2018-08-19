@@ -532,7 +532,6 @@ a.home-title-link:hover {
 
 .home-title-link {
     color:white;
-    margin-top: -120px;
 }
 .campHeaders {text-align:center;}
 .campButton {text-align:right;}
@@ -547,7 +546,25 @@ a.home-title-link:hover {
 
 .hpnc-tile {
     margin-bottom: 25px;
+    padding: 10px 0;
     text-align: center;
+    background-image: url("/media/basePics/hpnc_texture_1.jpg") !important;
+}
+
+.hpnc-tile-container div:nth-child(2) > figure {
+    background-image: url("/media/basePics/hpnc_texture_2.jpg") !important;
+}
+
+.hpnc-tile-container div:nth-child(3) > figure {
+    background-image: url("/media/basePics/hpnc_texture_3.jpg") !important;
+}
+
+.hpnc-tile-container div:nth-child(4) > figure {
+    background-image: url("/media/basePics/hpnc_texture_2.jpg") !important;
+}
+
+.hpnc-tile-container div:nth-child(5) > figure {
+    background-image: url("/media/basePics/hpnc_texture_3.jpg") !important;
 }
 
 .grid {
@@ -567,7 +584,6 @@ a.home-title-link:hover {
 	padding-left:5%;
 	padding-right:5%;
 	float:none;
-	
 	}
 }
 
@@ -688,7 +704,7 @@ figure.effect-honey:hover img {
 
 figure.effect-honey h2 {
 	position: absolute;
-	bottom: 0;
+	bottom: 20%;
 	left: 0;
 	padding: 1em 1.5em;
 	width: 100%;
@@ -696,6 +712,14 @@ figure.effect-honey h2 {
 	-webkit-transform: translate3d(0,-30px,0);
 	transform: translate3d(0,-30px,0);
 }
+
+@media (max-width: 768px) {
+    figure.effect-honey h2 {
+        bottom: 25%;
+        padding: 0;
+    }
+}
+
 
 figure.effect-honey figcaption::before,
 figure.effect-honey h2 {

@@ -7,7 +7,7 @@
     Layout = "WebBase.cshtml";
 }
 
-<div class="container">
+<div class="container hpnc-tile-container">
     @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("featuredContent"))
     {
 
@@ -17,7 +17,7 @@
 
 
         <div class="col-lg-4">
-              <figure class="effect-honey  hpnc-tile" >
+              <figure class="effect-honey hpnc-tile" >
                 <img src="@imageSrc" alt="img01" class="home-featured-content" />
                 <figcaption class="home-title">
                     <h2 class="home-title-header"> <a href="@link.Url" title="" class="home-title-link">@fieldset.GetValue("name")</a></h2>
