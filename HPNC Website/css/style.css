@@ -866,7 +866,17 @@ figure.effect-honey:hover h2{
 }
 /**End Board Page*/
 
-
+/**Start Volunteer Page*/
 .centered-google-form > p > iframe {
     max-width: 675px;
+}
+
+/**Start Our Story Page*/
+.our-story-tile-container {
+    width: 75%;
+}
+@media (max-width: 1200px) {
+    .our-story-tile-container {
+        width: 100%;
+    }
 }

@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+@using HPNC_Website.Models;
+
+@{
+    Layout = "WebBase.cshtml";
+}
+<div class="container hpnc-tile-container our-story-tile-container">
+    @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("circles"))
+    {
+
+        var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).Url.ToString());
+        var linkId = @fieldset.GetValue("page");
+        var link = Umbraco.Content(linkId);
+
+
+        <div class="col-lg-6">
+            <figure class="effect-honey hpnc-tile">
+                <img src="@imageSrc" alt="img01" class="home-featured-content" />
+                <figcaption class="home-title">
+                    <h2 class="home-title-header"> <a href="@fieldset.GetValue("link")" title="" class="home-title-link">@fieldset.GetValue("name")</a></h2>
+                </figcaption>
+            </figure>
+        </div>
+    }
+</div>

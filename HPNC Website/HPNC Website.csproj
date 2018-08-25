@@ -569,6 +569,7 @@
     <Content Include="Views\Partials\_LoginForm.cshtml" />
     <Content Include="Views\Partials\_LogoutForm.cshtml" />
     <Content Include="Views\BoardDocuments.cshtml" />
+    <Content Include="Views\OurStoryV2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
