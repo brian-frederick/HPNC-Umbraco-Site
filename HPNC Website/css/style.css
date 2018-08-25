@@ -239,7 +239,7 @@ blue2: #00687f
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-    color:#fff;
+    color:#f26531;
 	background-color:#5f6062;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
@@ -315,6 +315,7 @@ blue2: #00687f
 
 
 .topnav-donate-btn:hover, .topnav-donate-btn:focus {
+    color: #fff !important;
 	background-color:#f65216 !important;
     -webkit-transition: 0.4s; /* Safari */
     transition: 0.4s;
@@ -512,6 +513,11 @@ blue2: #00687f
 	border-bottom:2px #fff solid;
 }
 
+.home-title-header {
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center !important;
+}
 
 a.home-title {
     color:#fdbb30;
@@ -519,10 +525,14 @@ a.home-title {
     position: absolute;
     z-index: 100;
 }
-a.home-title:hover {
+a.home-title-link:hover {
     color:#f26531;
     padding-bottom: 35%;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+
+.home-title-link {
+    color:white;
 }
 .campHeaders {text-align:center;}
 .campButton {text-align:right;}
@@ -532,8 +542,31 @@ a.home-title:hover {
     position: relative;
     overflow: hidden;
     width: 80%;
-    margin-left: 10%;
     border-radius: 100%;
+    border: 4px solid white;
+}
+
+.hpnc-tile {
+    margin-bottom: 25px;
+    padding: 10px 0;
+    text-align: center;
+    background-image: url("/media/basePics/hpnc_texture_1.jpg") !important;
+}
+
+.hpnc-tile-container div:nth-child(2) > figure {
+    background-image: url("/media/basePics/hpnc_texture_2.jpg") !important;
+}
+
+.hpnc-tile-container div:nth-child(3) > figure {
+    background-image: url("/media/basePics/hpnc_texture_3.jpg") !important;
+}
+
+.hpnc-tile-container div:nth-child(4) > figure {
+    background-image: url("/media/basePics/hpnc_texture_2.jpg") !important;
+}
+
+.hpnc-tile-container div:nth-child(5) > figure {
+    background-image: url("/media/basePics/hpnc_texture_3.jpg") !important;
 }
 
 .grid {
@@ -553,7 +586,6 @@ a.home-title:hover {
 	padding-left:5%;
 	padding-right:5%;
 	float:none;
-	
 	}
 }
 
@@ -674,7 +706,7 @@ figure.effect-honey:hover img {
 
 figure.effect-honey h2 {
 	position: absolute;
-	bottom: 0;
+	bottom: 20%;
 	left: 0;
 	padding: 1em 1.5em;
 	width: 100%;
@@ -682,6 +714,14 @@ figure.effect-honey h2 {
 	-webkit-transform: translate3d(0,-30px,0);
 	transform: translate3d(0,-30px,0);
 }
+
+@media (max-width: 768px) {
+    figure.effect-honey h2 {
+        bottom: 25%;
+        padding: 0;
+    }
+}
+
 
 figure.effect-honey figcaption::before,
 figure.effect-honey h2 {

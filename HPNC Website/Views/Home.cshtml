@@ -7,20 +7,20 @@
     Layout = "WebBase.cshtml";
 }
 
-<div class="container">
+<div class="container hpnc-tile-container">
     @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("featuredContent"))
     {
 
-        var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
+        var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).Url.ToString());
         var linkId = @fieldset.GetValue("page");
         var link = Umbraco.Content(linkId);
 
 
-        <div class="col-lg-6">
-              <figure class="effect-honey" style="background:white;">
+        <div class="col-lg-4">
+              <figure class="effect-honey hpnc-tile" >
                 <img src="@imageSrc" alt="img01" class="home-featured-content" />
                 <figcaption class="home-title">
-                    <h2 style="padding-left: 185px; margin-top: -44px; font-size: 45px; font-weight: 700; max-width:80%;"> <a href="@link.Url" title="" style="color:white;margin-top: -85px;" class="home-title">@fieldset.GetValue("name")</a></h2>
+                    <h2 class="home-title-header"> <a href="@fieldset.GetValue("link")" title="" class="home-title-link">@fieldset.GetValue("name")</a></h2>
                 </figcaption>
             </figure>
         </div>
