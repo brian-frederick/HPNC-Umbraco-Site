@@ -239,7 +239,7 @@ blue2: #00687f
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-    color:#fff;
+    color:#f26531;
 	background-color:#5f6062;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
@@ -315,6 +315,7 @@ blue2: #00687f
 
 
 .topnav-donate-btn:hover, .topnav-donate-btn:focus {
+    color: #fff !important;
 	background-color:#f65216 !important;
     -webkit-transition: 0.4s; /* Safari */
     transition: 0.4s;
