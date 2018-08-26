@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "becce16a5da94ef8")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "10d32e4c9e197b3e")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -773,6 +773,68 @@ namespace Umbraco.Web.PublishedContentModels
 		public Archetype.Models.ArchetypeModel Circles
 		{
 			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("circles"); }
+		}
+	}
+
+	/// <summary>Image Set Page</summary>
+	[PublishedContentModel("imageSetPage")]
+	public partial class ImageSetPage : PublishedContentModel, IAdmin
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "imageSetPage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ImageSetPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImageSetPage, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Featured Content: Add title and page description here.
+		///</summary>
+		[ImplementPropertyType("featuredContent")]
+		public IHtmlString FeaturedContent
+		{
+			get { return this.GetPropertyValue<IHtmlString>("featuredContent"); }
+		}
+
+		///<summary>
+		/// Image Sets: Generic Image Sets
+		///</summary>
+		[ImplementPropertyType("imageSets")]
+		public Archetype.Models.ArchetypeModel ImageSets
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("imageSets"); }
+		}
+
+		///<summary>
+		/// Page Id: This will add an id to the page's container for css purposes
+		///</summary>
+		[ImplementPropertyType("pageId")]
+		public string PageId
+		{
+			get { return this.GetPropertyValue<string>("pageId"); }
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
 		}
 	}
 
