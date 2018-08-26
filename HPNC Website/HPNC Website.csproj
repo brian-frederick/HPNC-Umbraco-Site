@@ -570,6 +570,7 @@
     <Content Include="Views\Partials\_LogoutForm.cshtml" />
     <Content Include="Views\BoardDocuments.cshtml" />
     <Content Include="Views\OurStoryV2.cshtml" />
+    <Content Include="Views\ImageSetPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
