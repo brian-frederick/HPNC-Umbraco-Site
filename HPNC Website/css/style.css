@@ -557,19 +557,19 @@ a.home-title-link:hover {
     background-image: url("/media/basePics/hpnc_texture_1.jpg") !important;
 }
 
-.hpnc-tile-container div:nth-child(2) > figure {
+.hpnc-tile-container div:nth-child(2) > .hpnc-tile {
     background-image: url("/media/basePics/hpnc_texture_2.jpg") !important;
 }
 
-.hpnc-tile-container div:nth-child(3) > figure {
+.hpnc-tile-container div:nth-child(3) > .hpnc-tile {
     background-image: url("/media/basePics/hpnc_texture_3.jpg") !important;
 }
 
-.hpnc-tile-container div:nth-child(4) > figure {
+.hpnc-tile-container div:nth-child(4) > .hpnc-tile {
     background-image: url("/media/basePics/hpnc_texture_2.jpg") !important;
 }
 
-.hpnc-tile-container div:nth-child(5) > figure {
+.hpnc-tile-container div:nth-child(5) > .hpnc-tile {
     background-image: url("/media/basePics/hpnc_texture_3.jpg") !important;
 }
 
@@ -868,7 +868,6 @@ figure.effect-honey:hover h2{
     color: #008fb0;
     margin-right: 5px;
 }
-/**End Board Page*/
 
 /**Start Volunteer Page*/
 .centered-google-form > p > iframe {
@@ -882,5 +881,51 @@ figure.effect-honey:hover h2{
 @media (max-width: 1200px) {
     .our-story-tile-container {
         width: 100%;
+    }
+}
+
+/**Start TileSetHeader Partial (for program pages etc)*/
+
+.page-title {
+    text-align: center;
+}
+
+.page-subtitle {
+    text-align: center;
+}
+
+.hpnc-header-tile {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 10px 0;
+}
+
+.green-theme > div > .hpnc-header-tile {
+    background-color: #c1d72f;
+}
+
+.orange-theme > div > .hpnc-header-tile {
+    background-color: #f26531;
+}
+
+.blue-theme > div > .hpnc-header-tile {
+    background-color: #008fb0;
+}
+
+.yellow-theme > div > .hpnc-header-tile {
+    background-color: #fdbb30;
+}
+
+.gray-theme > div > .hpnc-header-tile {
+    background-color: #bec0c2;
+}
+
+@media (max-width: 768px) {
+    .hpnc-tile-container > div > .hpnc-header-tile {
+        display: none;
+    }
+
+    .hpnc-tile-container div:nth-of-type(1) > .hpnc-header-tile {
+        display: block;
     }
 }

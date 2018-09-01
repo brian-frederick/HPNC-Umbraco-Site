@@ -57,5 +57,10 @@ namespace HPNC_Website.Controllers
             return RedirectToCurrentUmbracoPage();
         }
 
+        public ActionResult RenderTileSetHeader()
+        {
+            return PartialView("_TileSetHeader");
+        }
+
     }
 }

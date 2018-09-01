@@ -571,6 +571,8 @@
     <Content Include="Views\BoardDocuments.cshtml" />
     <Content Include="Views\OurStoryV2.cshtml" />
     <Content Include="Views\ImageSetPage.cshtml" />
+    <Content Include="Views\TileSetHeader.cshtml" />
+    <Content Include="Views\Partials\_TileSetHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

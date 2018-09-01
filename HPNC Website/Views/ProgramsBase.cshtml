@@ -3,5 +3,6 @@
 	Layout = "WebBase.cshtml";
 }
 <div class="container">
-@Umbraco.Field("corePageContent")
+    @{Html.RenderAction("RenderTileSetHeader", "Member");}
+    @Umbraco.Field("corePageContent")
 </div>

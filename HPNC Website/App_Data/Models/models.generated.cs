@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "875845fd8a929cd6")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "46f5133a72e55c3a")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -681,12 +681,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Images: Add a total of three images
+		/// ImageSet: Add Three Images
 		///</summary>
-		[ImplementPropertyType("images")]
-		public Archetype.Models.ArchetypeModel Images
+		[ImplementPropertyType("imageSet")]
+		public string ImageSet
 		{
-			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetImages(this); }
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetImageSet(this); }
 		}
 
 		///<summary>
@@ -871,8 +871,8 @@ namespace Umbraco.Web.PublishedContentModels
 	/// <summary>TileSet Header</summary>
 	public partial interface ITileSetHeader : IPublishedContent
 	{
-		/// <summary>Images</summary>
-		Archetype.Models.ArchetypeModel Images { get; }
+		/// <summary>ImageSet</summary>
+		string ImageSet { get; }
 
 		/// <summary>Page Subtitle</summary>
 		string PageSubtitle { get; }
@@ -910,16 +910,16 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Images: Add a total of three images
+		/// ImageSet: Add Three Images
 		///</summary>
-		[ImplementPropertyType("images")]
-		public Archetype.Models.ArchetypeModel Images
+		[ImplementPropertyType("imageSet")]
+		public string ImageSet
 		{
-			get { return GetImages(this); }
+			get { return GetImageSet(this); }
 		}
 
-		/// <summary>Static getter for Images</summary>
-		public static Archetype.Models.ArchetypeModel GetImages(ITileSetHeader that) { return that.GetPropertyValue<Archetype.Models.ArchetypeModel>("images"); }
+		/// <summary>Static getter for ImageSet</summary>
+		public static string GetImageSet(ITileSetHeader that) { return that.GetPropertyValue<string>("imageSet"); }
 
 		///<summary>
 		/// Page Subtitle: Not required
