@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7781c30447c1e284")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "875845fd8a929cd6")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
 
 
 // FILE: models.generated.cs
@@ -664,7 +664,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Programs Base</summary>
 	[PublishedContentModel("programsBaseCopy")]
-	public partial class ProgramsBaseCopy : Programs1, IRichTextBase
+	public partial class ProgramsBaseCopy : Programs1, IRichTextBase, ITileSetHeader
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "programsBaseCopy";
@@ -694,6 +694,42 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString CorePageContent
 		{
 			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
+		}
+
+		///<summary>
+		/// Images: Add a total of three images
+		///</summary>
+		[ImplementPropertyType("images")]
+		public Archetype.Models.ArchetypeModel Images
+		{
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetImages(this); }
+		}
+
+		///<summary>
+		/// Page Subtitle: Not required
+		///</summary>
+		[ImplementPropertyType("pageSubtitle")]
+		public string PageSubtitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetPageSubtitle(this); }
+		}
+
+		///<summary>
+		/// Page Title: Add Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Theme Class: Dictates styling of TileSet Header
+		///</summary>
+		[ImplementPropertyType("themeClass")]
+		public object ThemeClass
+		{
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetThemeClass(this); }
 		}
 	}
 
@@ -845,6 +881,97 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
 		}
+	}
+
+	// Mixin content Type 1206 with alias "tileSetHeader"
+	/// <summary>TileSet Header</summary>
+	public partial interface ITileSetHeader : IPublishedContent
+	{
+		/// <summary>Images</summary>
+		Archetype.Models.ArchetypeModel Images { get; }
+
+		/// <summary>Page Subtitle</summary>
+		string PageSubtitle { get; }
+
+		/// <summary>Page Title</summary>
+		string PageTitle { get; }
+
+		/// <summary>Theme Class</summary>
+		object ThemeClass { get; }
+	}
+
+	/// <summary>TileSet Header</summary>
+	[PublishedContentModel("tileSetHeader")]
+	public partial class TileSetHeader : PublishedContentModel, ITileSetHeader
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "tileSetHeader";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public TileSetHeader(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TileSetHeader, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Images: Add a total of three images
+		///</summary>
+		[ImplementPropertyType("images")]
+		public Archetype.Models.ArchetypeModel Images
+		{
+			get { return GetImages(this); }
+		}
+
+		/// <summary>Static getter for Images</summary>
+		public static Archetype.Models.ArchetypeModel GetImages(ITileSetHeader that) { return that.GetPropertyValue<Archetype.Models.ArchetypeModel>("images"); }
+
+		///<summary>
+		/// Page Subtitle: Not required
+		///</summary>
+		[ImplementPropertyType("pageSubtitle")]
+		public string PageSubtitle
+		{
+			get { return GetPageSubtitle(this); }
+		}
+
+		/// <summary>Static getter for Page Subtitle</summary>
+		public static string GetPageSubtitle(ITileSetHeader that) { return that.GetPropertyValue<string>("pageSubtitle"); }
+
+		///<summary>
+		/// Page Title: Add Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return GetPageTitle(this); }
+		}
+
+		/// <summary>Static getter for Page Title</summary>
+		public static string GetPageTitle(ITileSetHeader that) { return that.GetPropertyValue<string>("pageTitle"); }
+
+		///<summary>
+		/// Theme Class: Dictates styling of TileSet Header
+		///</summary>
+		[ImplementPropertyType("themeClass")]
+		public object ThemeClass
+		{
+			get { return GetThemeClass(this); }
+		}
+
+		/// <summary>Static getter for Theme Class</summary>
+		public static object GetThemeClass(ITileSetHeader that) { return that.GetPropertyValue("themeClass"); }
 	}
 
 	/// <summary>Folder</summary>
