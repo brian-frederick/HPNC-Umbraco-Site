@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "10d32e4c9e197b3e")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7781c30447c1e284")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -345,7 +345,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Board of Directors</summary>
 	[PublishedContentModel("boardOfDirectors")]
-	public partial class BoardOfDirectors : PublishedContentModel
+	public partial class BoardOfDirectors : PublishedContentModel, IAdmin
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "boardOfDirectors";
@@ -384,6 +384,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString ContentField
 		{
 			get { return this.GetPropertyValue<IHtmlString>("contentField"); }
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
 		}
 	}
 

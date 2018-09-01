@@ -224,7 +224,7 @@ blue2: #00687f
 }
 
 .navbar-nav > li {
-    margin-right: 1.5em;
+    margin-right: 2.75em;
 }
 
 .navbar-nav > li a {
@@ -279,6 +279,10 @@ blue2: #00687f
 }
 
 @media (max-width: 768px) {
+    .navbar-nav > li {
+        margin-right: 0;
+        border-top: white solid 1px;
+    }
     .topnav-logo-fam {
         display: none;
     }
