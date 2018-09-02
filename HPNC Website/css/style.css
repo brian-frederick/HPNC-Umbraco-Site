@@ -920,12 +920,14 @@ figure.effect-honey:hover h2{
     background-color: #bec0c2;
 }
 
-@media (max-width: 768px) {
-    .hpnc-tile-container > div > .hpnc-header-tile {
+@media (max-width: 991px) {
+    .hpnc-tile-container div:nth-of-type(3) > .hpnc-header-tile {
         display: none;
     }
+}
 
+@media (max-width: 768px) {
     .hpnc-tile-container div:nth-of-type(1) > .hpnc-header-tile {
-        display: block;
+        display: none;
     }
 }
