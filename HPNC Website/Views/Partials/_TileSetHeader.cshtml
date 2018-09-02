@@ -1,0 +1,42 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+@using HPNC_Website.Models;
+
+@{
+    var title = Umbraco.Field("pageTitle").ToString();
+    var subtitle = Umbraco.Field("pageSubtitle").ToString();
+    var imageIds = Umbraco.Field("imageSet").ToString();
+    var themeClassUnchecked = Umbraco.Field("themeClass").ToString();
+    var themeClass = String.IsNullOrEmpty(themeClassUnchecked) ? "no-theme" : themeClassUnchecked;
+    var imageIdList = imageIds.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+}
+
+<div class="container hpnc-tile-container @themeClass">
+
+        @if (!String.IsNullOrEmpty(title))
+        {
+            <h1 class="page-title">@title</h1>
+        }
+
+        @if (!String.IsNullOrEmpty(subtitle))
+        {
+            <h3 class="page-subtitle">@subtitle</h3>
+        }
+
+        @if (imageIdList.Count() > 0)
+        {
+            var imageList = Umbraco.TypedMedia(imageIdList).Where(x => x != null);
+
+            foreach (var image in imageList)
+            {
+                var imageSrc = customURLHelper.UmbracoFile(image.Url.ToString());
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <figure class="hpnc-header-tile">
+                        <img src="@imageSrc" alt="img01" class="home-featured-content" />
+                    </figure>
+                </div>
+            }
+        }
+
+</div>
