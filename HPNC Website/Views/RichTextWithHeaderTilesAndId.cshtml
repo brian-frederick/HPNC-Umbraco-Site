@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.RichTextWithHeaderTilesAndId>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "WebBase.cshtml";
+}
+
+<div id="@Umbraco.Field("pageId")" class="container">
+    @{Html.RenderAction("RenderTileSetHeader", "Member");}
+    @Umbraco.Field("corePageContent")
+</div>
