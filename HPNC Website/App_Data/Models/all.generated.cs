@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "46f5133a72e55c3a")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "48ada96276901b36")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 
 // FILE: models.generated.cs
@@ -972,6 +972,86 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Theme Class</summary>
 		public static object GetThemeClass(ITileSetHeader that) { return that.GetPropertyValue("themeClass"); }
+	}
+
+	/// <summary>Programs Base v2</summary>
+	[PublishedContentModel("programsBaseV2")]
+	public partial class ProgramsBaseV2 : PublishedContentModel, IAdmin, IRichTextBase, ITileSetHeader
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "programsBaseV2";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ProgramsBaseV2(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ProgramsBaseV2, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// UmbracoNaviHide: UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return Umbraco.Web.PublishedContentModels.Admin.GetUmbracoNaviHide(this); }
+		}
+
+		///<summary>
+		/// Core Page Content: Add full page content here
+		///</summary>
+		[ImplementPropertyType("corePageContent")]
+		public IHtmlString CorePageContent
+		{
+			get { return Umbraco.Web.PublishedContentModels.RichTextBase.GetCorePageContent(this); }
+		}
+
+		///<summary>
+		/// ImageSet: Add Three Images
+		///</summary>
+		[ImplementPropertyType("imageSet")]
+		public string ImageSet
+		{
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetImageSet(this); }
+		}
+
+		///<summary>
+		/// Page Subtitle: Not required
+		///</summary>
+		[ImplementPropertyType("pageSubtitle")]
+		public string PageSubtitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetPageSubtitle(this); }
+		}
+
+		///<summary>
+		/// Page Title: Add Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetPageTitle(this); }
+		}
+
+		///<summary>
+		/// Theme Class: Dictates styling of TileSet Header
+		///</summary>
+		[ImplementPropertyType("themeClass")]
+		public object ThemeClass
+		{
+			get { return Umbraco.Web.PublishedContentModels.TileSetHeader.GetThemeClass(this); }
+		}
 	}
 
 	/// <summary>Folder</summary>

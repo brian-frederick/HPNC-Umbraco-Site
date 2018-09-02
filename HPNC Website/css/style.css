@@ -884,7 +884,7 @@ figure.effect-honey:hover h2{
     }
 }
 
-/**Start TileSetHeader Partial (for program pages etc)*/
+/**TileSetHeader Partial (for program pages etc)*/
 
 .page-title {
     text-align: center;
@@ -892,6 +892,7 @@ figure.effect-honey:hover h2{
 
 .page-subtitle {
     text-align: center;
+    font-size: 16px;
 }
 
 .hpnc-header-tile {
