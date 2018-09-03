@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7fab2bbafe8209f9")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bc6950d78dc7227a")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -610,30 +610,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Enrichment Programs: Add Enrichment Programs here
+		/// Teens Programs: Teen Programs
 		///</summary>
-		[ImplementPropertyType("enrichmentPrograms")]
-		public Archetype.Models.ArchetypeModel EnrichmentPrograms
+		[ImplementPropertyType("teensPrograms")]
+		public Archetype.Models.ArchetypeModel TeensPrograms
 		{
-			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("enrichmentPrograms"); }
-		}
-
-		///<summary>
-		/// Mentoring Programs: Add Mentoring Programs here
-		///</summary>
-		[ImplementPropertyType("mentoringPrograms")]
-		public Archetype.Models.ArchetypeModel MentoringPrograms
-		{
-			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("mentoringPrograms"); }
-		}
-
-		///<summary>
-		/// Partners Programs: Add Partners Programs here
-		///</summary>
-		[ImplementPropertyType("partnersPrograms")]
-		public Archetype.Models.ArchetypeModel PartnersPrograms
-		{
-			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("partnersPrograms"); }
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("teensPrograms"); }
 		}
 
 		///<summary>

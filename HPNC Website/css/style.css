@@ -28,8 +28,10 @@ blue2: #00687f
     text-align:center;            
 }
 .programs-item-wrap {
-    margin:20px 0;
-               
+    margin:20px 0;               
+}
+.programs-item-wrap > a:hover {
+    text-decoration: none;
 }
 .programs-imglink {
     display:inline-block;

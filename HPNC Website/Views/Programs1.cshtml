@@ -7,19 +7,17 @@
 	Layout = "WebBase.cshtml";
 }
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 programs-topnav">
-            <a href="#early-childhood" title="EARLY CHILDHOOD">EARLY CHILDHOOD</a> |
-            <a href="#schools-out" title="SCHOOL'S OUT">SCHOOL'S OUT</a> |
-            <a href="#athletics" title="ATHLETICS">ATHLETICS</a> |
-            <a href="#partners" title="PARTNERS">PARTNERS</a> |
-            <a href="#mentoring" title="MENTORING">MENTORING</a> |
-            <a href="#enrichment" title="ENRICHMENT">ENRICHMENT</a>
-        </div>
-    </div>
+    @*<div class="row">
+            <div class="col-xs-12 programs-topnav">
+                <a href="#early-childhood" title="EARLY CHILDHOOD">EARLY CHILDHOOD</a> |
+                <a href="#schools-out" title="SCHOOL'S OUT">SCHOOL'S OUT</a> |
+                <a href="#athletics" title="ATHLETICS">ATHLETICS</a> |
+                <a href="#teens" title="TEENS">TEENS</a> |
+            </div>
+        </div>*@
 
     <a name="early-childhood"></a>
-    <div class="row">
+    <div id="early-childhood" class="row">
         <div class="col-xs-12">
             <div class="programs-sectiontitle">EARLY CHILDHOOD</div>
         </div>
@@ -31,19 +29,19 @@
             var link = Umbraco.Content(linkId);
             var name = fieldset.GetValue("name");
 
-        <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
-            <a href="@link.Url">
-                <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
-                <div class="programs-title">@name</div>
-            </a>
-        </div>
-        }       
+            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
+                <a href="@link.Url">
+                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
+                    <div class="programs-title">@name</div>
+                </a>
+            </div>
+        }
     </div>
 
-    <a name="schools-out"></a>
-    <div class="row">
+    <a name="elementary"></a>
+    <div id="elementary" class="row">
         <div class="col-xs-12">
-            <div class="programs-sectiontitle">SCHOOL'S OUT</div>
+            <div class="programs-sectiontitle">ELEMENTARY</div>
         </div>
         @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("afterSchoolPrograms"))
         {
@@ -60,9 +58,31 @@
             </div>
         }
     </div>
-    
+
+
+    <a name="teens"></a>
+    <div id="teens" class="row">
+        <div class="col-xs-12">
+            <div class="programs-sectiontitle">TEENS</div>
+        </div>
+        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("teensPrograms"))
+        {
+            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
+            var linkId = @fieldset.GetValue("page");
+            var link = Umbraco.Content(linkId);
+            var name = fieldset.GetValue("name");
+
+            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
+                <a href="@link.Url">
+                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
+                    <div class="programs-title">@name</div>
+                </a>
+            </div>
+        }
+    </div>
+
     <a name="athletics"></a>
-    <div class="row">
+    <div id="athletics" class="row">
         <div class="col-xs-12">
             <div class="programs-sectiontitle">ATHLETICS</div>
         </div>
@@ -81,68 +101,4 @@
             </div>
         }
     </div>
-
-    <a name="partners"></a>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="programs-sectiontitle">PARTNERS</div>
-        </div>
-        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("partnersPrograms"))
-        {
-            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
-            var linkId = @fieldset.GetValue("page");
-            var link = Umbraco.Content(linkId);
-            var name = fieldset.GetValue("name");
-
-            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
-                <a href="@link.Url">
-                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
-                    <div class="programs-title">@name</div>
-                </a>
-            </div>
-        }
-    </div>
-
-    <a name="mentoring"></a>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="programs-sectiontitle">MENTORING</div>
-        </div>
-        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("mentoringPrograms"))
-        {
-            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
-            var linkId = @fieldset.GetValue("page");
-            var link = Umbraco.Content(linkId);
-            var name = fieldset.GetValue("name");
-
-            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
-                <a href="@link.Url">
-                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
-                    <div class="programs-title">@name</div>
-                </a>
-            </div>
-        }
-    </div>
-
-    <a name="enrichment"></a>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="programs-sectiontitle">Enrichment</div>
-        </div>
-        @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("enrichmentPrograms"))
-        {
-            var test = fieldset.GetValue("name");
-            var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(fieldset.GetValue("image")).umbracoFile.ToString());
-            var linkId = @fieldset.GetValue("page");
-            var link = Umbraco.Content(linkId);
-            var name = fieldset.GetValue("name");
-
-            <div class="col-md-4 col-sm-6 col-xs-12 programs-item-wrap">
-                <a href="@link.Url">
-                    <img class="img-responsive img-circle programs-imglink" src="@imageSrc" alt="@name">
-                    <div class="programs-title">@name</div>
-                </a>
-            </div>
-        }
-    </div>
-</div>  
+</div>
