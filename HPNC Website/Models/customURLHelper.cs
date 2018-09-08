@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Configuration;
 
 namespace HPNC_Website.Models
@@ -13,12 +10,13 @@ namespace HPNC_Website.Models
         {
             if (partialURL != "")
             {
-                var BaseURL = ConfigurationManager.AppSettings["BaseURL"];
+                //var BaseURL = ConfigurationManager.AppSettings["BaseURL"];
 
-                var imageIndex = partialURL.IndexOf("/media");
+                var imageIndex = partialURL.IndexOf("/media", StringComparison.Ordinal);
                 var clippedPartialURL = partialURL.Substring(imageIndex);
 
-                var completeURL = BaseURL + clippedPartialURL;
+                //var completeURL = BaseURL + clippedPartialURL;
+                var completeURL = clippedPartialURL;
                 return completeURL;
             }
             else

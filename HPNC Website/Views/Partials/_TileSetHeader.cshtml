@@ -1,6 +1,4 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@using Archetype.Models;
-@using Archetype.Extensions;
 @using HPNC_Website.Models;
 
 @{
@@ -24,7 +22,7 @@
             <h3 class="page-subtitle">@subtitle</h3>
         }
 
-        @if (imageIdList.Count() > 0)
+        @if (imageIdList.Any())
         {
             var imageList = Umbraco.TypedMedia(imageIdList).Where(x => x != null);
 

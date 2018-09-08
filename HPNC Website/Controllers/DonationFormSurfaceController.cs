@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using AutoMapper.Mappers;
 using HPNC_Website.Models;
 using Umbraco.Web.Mvc;
 using Square.Connect.Api;
-using Square.Connect.Client;
 using Square.Connect.Model;
 using System.Configuration;
 
@@ -52,7 +47,7 @@ namespace HPNC_Website.Controllers
                 var response = transactionApi.Charge(squareAuthorization, squareLocationId, body);
                 var confirm = response;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 TempData["DonationError"] = true;

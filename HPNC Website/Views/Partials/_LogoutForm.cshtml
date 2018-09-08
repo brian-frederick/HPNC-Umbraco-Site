@@ -3,10 +3,10 @@
 
 @if (Umbraco.MemberIsLoggedOn())
 {
-    using (Html.BeginUmbracoForm("SubmitLogout", "Member", System.Web.Mvc.FormMethod.Post, new { id = "logout" }))
+    using (Html.BeginUmbracoForm("SubmitLogout", "Member", FormMethod.Post, new { id = "logout" }))
     {
         @Html.AntiForgeryToken()
-        var myUser = System.Web.Security.Membership.GetUser();
+        var myUser = Membership.GetUser();
         if (myUser != null)
         {
             <p><strong>Logged in as</strong> <span>@myUser.UserName</span></p>
