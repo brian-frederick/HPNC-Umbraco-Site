@@ -3,7 +3,7 @@
 
 @if (!Umbraco.MemberIsLoggedOn())
 {
-    using (Html.BeginUmbracoForm("SubmitLogin", "Member", System.Web.Mvc.FormMethod.Post, new { id = "login" }))
+    using (Html.BeginUmbracoForm("SubmitLogin", "Member", FormMethod.Post, new { id = "login" }))
     {
         @Html.AntiForgeryToken()
         <div class="row">
