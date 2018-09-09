@@ -934,3 +934,13 @@ figure.effect-honey:hover h2{
         display: none;
     }
 }
+
+/**Start Program-Partners Page*/
+#program-partners .circular-image {
+    border-radius: 0;
+    max-height: 70px;
+}
+
+#program-partners .inner-row {
+    height: 110px;
+}
