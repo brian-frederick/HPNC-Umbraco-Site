@@ -233,6 +233,7 @@ blue2: #00687f
     float: left;
     color:#fff;
 	text-transform:uppercase;
+	font-size:14px;
 }
 
 #navbar-items {
@@ -942,5 +943,20 @@ figure.effect-honey:hover h2{
 }
 
 #program-partners .inner-row {
-    height: 110px;
+    height: 111px;
 }
+
+
+
+
+
+
+a.footer-social-icon {
+	color:#fff;
+}
+a.footer-social-icon:hover, a.footer-social-icon:active, a.footer-social-icon:focus,  {
+	color: #008fb0 !important;
+}
+
+
+
