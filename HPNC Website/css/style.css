@@ -496,13 +496,25 @@ blue2: #00687f
 	margin:88px auto 0 auto; 
 	width:210px; 
 	display:block;
-}	
+}
 
 @media (max-width: 768px) {
 	.footer-logo {
 		margin-top:30px;
 	}
 }
+
+.footer-guidestar {
+    margin: 5px auto 0 auto;
+    width: 210px;
+    display: block;
+    text-align: center;
+}
+
+.footer-guidestar > img {
+    max-width: 100px;
+}
+
 	
 .emaillist-submit {
 	border:none;
@@ -954,8 +966,13 @@ figure.effect-honey:hover h2{
 a.footer-social-icon {
 	color:#fff;
 }
-a.footer-social-icon:hover, a.footer-social-icon:active, a.footer-social-icon:focus,  {
+a.footer-social-icon:hover, a.footer-social-icon:active, a.footer-social-icon:focus  {
 	color: #008fb0 !important;
+}
+
+a.footer-social-icon > img {
+    height: 30px;
+    margin-left: 8px;
 }
 
 
