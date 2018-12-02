@@ -571,10 +571,12 @@
     <Content Include="Views\BoardDocuments.cshtml" />
     <Content Include="Views\OurStoryV2.cshtml" />
     <Content Include="Views\ImageSetPage.cshtml" />
-    <Content Include="Views\TileSetHeader.cshtml" />
     <Content Include="Views\Partials\_TileSetHeader.cshtml" />
     <Content Include="Views\ProgramsBaseV2.cshtml" />
     <Content Include="Views\RichTextWithHeaderTilesAndId.cshtml" />
+    <Content Include="Views\Partials\_ArticleBlurbSet.cshtml" />
+    <Content Include="Views\DonateV2.cshtml" />
+    <Content Include="Views\ArticleBlurbsSet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
