@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using HPNC_Website.Models;
+
+@{
+    Layout = "WebBase.cshtml";
+}
+
+
+<body>
+	<div class="container">
+    	@{Html.RenderAction("RenderTileSetHeader", "Member");}
+    	@Umbraco.Field("corePageContent")
+
+	</div><!--/container-->	            
+
+</body>
