@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using HPNC_Website.Models;
+
+
+<div class="row article-section">
+    @foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("articleBlurbs"))
+    {
+        var imageSrc = customURLHelper.UmbracoFile(Umbraco.Media(@fieldset.GetValue("photo")).umbracoFile.ToString());
+        var url = fieldset.GetValue("url");
+        var buttonText = fieldset.GetValue("buttonText");
+        var buttonLink = fieldset.GetValue("buttonLink");
+
+    <div class="col-xs-12 col-sm-6 article-container">
+        <a href="@url">
+            <div class="row">
+                <img class="article-photo" src="@imageSrc" />
+            </div>
+            <div class="row">
+                <h2 class="article-title">@fieldset.GetValue("title")</h2>
+            </div>
+            <div class="row">
+                <p class="article-details">@fieldset.GetValue("details")</p>
+            </div>
+        </a>
+
+        @{
+            if (!String.IsNullOrEmpty(buttonText) && !String.IsNullOrEmpty(buttonLink))
+            {
+                <a href="@buttonLink" class="article-btn">@buttonText</a>
+
+            }
+        }
+    </div>
+    }
+</div>
